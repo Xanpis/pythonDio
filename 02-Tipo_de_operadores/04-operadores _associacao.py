@@ -1,6 +1,5 @@
 """
 Operadores de associação 
-
 São utilizados para verifica se o 
 objeto está presente na sequencia 
 
