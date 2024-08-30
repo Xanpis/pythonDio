@@ -1,4 +1,5 @@
 
+
 # Declaração normal 
 name = 'Guilherme'
 idade = 27
