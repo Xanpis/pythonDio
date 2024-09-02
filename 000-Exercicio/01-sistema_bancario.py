@@ -19,7 +19,7 @@ while True:
     
     # Depositar
     if op == "d":
-        var = abs(float(input('Valor a ser depositado = R$ ')))
+        var = float(input('Valor a ser depositado = R$ '))
         
         if var > 0: 
             saldo += var
@@ -29,7 +29,7 @@ while True:
             
     # Sacar        
     elif op == "s":
-        var = abs(float(input("Valor a ser sacado: = R$ ")))
+        var = float(input("Valor a ser sacado: = R$ "))
         
         if var > 0: 
         
@@ -45,24 +45,28 @@ while True:
                 numero_saques += 1
                 print('Dinheiro Sacado')   
                 extrato += f'saque: {numero_saques}\n'   
-                extrato += f'Dinheiro Sacado: R$ {var}\n'   
+                extrato += f'Dinheiro Sacado: R$ {var:.2f}\n'   
                 
             else:
-                print("Valor se saque maior do que o valor na conta ")
+                print("Valor saque maior do que o valor na conta ")
                 
         else:
             print(f"Digite um valor maior que {var}")        
             
     # Extrato          
     elif op == "e":
-        print("         Estrato de transações")
+        print("         Extrato de transações")
         print("------------------------------------- ")
-        print(extrato)
+        print("Não tem operacoes na sua conta" if not extrato else extrato)
         print("------------------------------------- \n")
-        print(f"Saldo: R$ {saldo}")
+        print(f"Saldo: R$ {saldo:.2f}")
         print(f"Numero de saques: = {numero_saques}")
         print("------------------------------------- \n")
     
+    elif op == "q":
+        print('Obrigado!!!')
+        break
     
-    
+    else:
+        print("Opção invalida")
     
