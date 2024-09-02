@@ -44,8 +44,8 @@ while True:
                 saldo -= var
                 numero_saques += 1
                 print('Dinheiro Sacado')   
-                extrato += f'Dinheiro Sacado: R$ {saldo}\n'   
-                extrato += f'Numero de saque: {numero_saques}\n'   
+                extrato += f'saque: {numero_saques}\n'   
+                extrato += f'Dinheiro Sacado: R$ {var}\n'   
                 
             else:
                 print("Valor se saque maior do que o valor na conta ")
@@ -55,13 +55,12 @@ while True:
             
     # Extrato          
     elif op == "e":
-        print("-------------------------------------")
-        print(f"Saldo: R$ {saldo}")
-        print(f"Numero de saques: = {numero_saques}")
-        print("------------------------------------- \n")
-        print("         Estrato de transações \n")
+        print("         Estrato de transações")
         print("------------------------------------- ")
         print(extrato)
+        print("------------------------------------- \n")
+        print(f"Saldo: R$ {saldo}")
+        print(f"Numero de saques: = {numero_saques}")
         print("------------------------------------- \n")
     
     
