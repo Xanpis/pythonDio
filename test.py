@@ -5,10 +5,13 @@
 def return_type()-> bool :
     return False
 
-def fas(x:str)-> str:
+def fas(x):
     return x 
 
-lista = [1,2,3]
 
+def toby():
+    lista.append(3)
+
+lista = [1,2,3]
 
     
