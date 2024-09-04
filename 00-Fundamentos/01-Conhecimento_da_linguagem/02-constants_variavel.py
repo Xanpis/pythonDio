@@ -1,7 +1,7 @@
 
 
 # Declaração normal 
-name = 'Guilherme'
+name = 'Dolores'
 idade = 27
 
 # Declarando variares na mesma linha 
