@@ -1,6 +1,4 @@
 
-from traceback import print_tb
-
 
 livro = [1,"Python","Way",30,40,50,30,"Way"]
 
@@ -20,7 +18,7 @@ print(l1)
 lista.extend([50,'python'])
 print(lista)
 
-# Encontrando o objeto de primeira ocorrencia 
+# Encontrando a posição do objeto, pega a primeira ocorrencia 
 l2 = lista.index(30)
 print(lista[3])
 print(l2)
