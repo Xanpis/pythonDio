@@ -18,5 +18,4 @@ print(tu[2:6])
 
 print(len(tu))
 print(tu.count('y')) 
- 
 print(tu.index(7))
