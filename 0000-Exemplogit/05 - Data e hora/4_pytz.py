@@ -1,10 +1,8 @@
-from datetime import datetime
-
-import pytz
+from datetime import date, datetime
 
 
-data = datetime.now(pytz.timezone("Europe/Oslo"))
-data2 = datetime.now(pytz.timezone("America/Sao_Paulo"))
+data = datetime.now(datetime.timezone("Europe/Oslo"))
+data2 = datetime.now(datetime.timezone("America/Sao_Paulo"))
 
 
 print(data)
