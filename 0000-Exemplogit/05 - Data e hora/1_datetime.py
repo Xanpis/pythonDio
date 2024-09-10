@@ -12,7 +12,6 @@ hora = time(10, 20, 0)
 print(hora)
 
 hora_min_seg = datetime.now()
-temp0 = 1
 hora = hora_min_seg.hour
 min = hora_min_seg.minute
 seg = hora_min_seg.second
