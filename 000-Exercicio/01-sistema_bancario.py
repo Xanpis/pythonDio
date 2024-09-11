@@ -57,7 +57,7 @@ while True:
     elif op == "e":
         print("         Extrato de transações")
         print("------------------------------------- ")
-        print("Não tem operacoes na sua conta" if not extrato else extrato)
+        print("Não tem operações na sua conta" if not extrato else extrato)
         print("------------------------------------- \n")
         print(f"Saldo: R$ {saldo:.2f}")
         print(f"Numero de saques: = {numero_saques}")
