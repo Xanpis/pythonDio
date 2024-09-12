@@ -11,20 +11,20 @@ from shlex import join
 
 
 nome = "pYtHon"
-#  metodo par transforma a primeira letra em maiusculo
+#  método par transforma a primeira letra em maiúsculo
 print("###### inicio ######")
 print(nome.title())
 
-nome = "    pYtHon Espaco    "
+nome = "    pYtHon Espaço    "
 print("..."  +  nome  + '....')
 
-#  removendo espaco em branco dos 2 lados 
+#  removendo espaço em branco dos 2 lados 
 print("..."  + nome.strip() + '....')
 
-#  removendo espaco em branco do lado esquerdo  
+#  removendo espaço em branco do lado esquerdo  
 print("..."  +  nome.lstrip() + '....')
 
-#  removendo espaco em branco do lado  direito
+#  removendo espaço em branco do lado  direito
 print("..."  +  nome.rstrip() + '....')
 
 
