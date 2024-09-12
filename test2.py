@@ -2,7 +2,12 @@ from datetime import datetime, date, time, timezone
 
 # datas_horas = datetime.now()
 # print(datas_horas.strftime("%H:%M"))
+person = {}
+while True:
 
-datas_horas = datetime.now()
-mascara_data_BR = datas_horas.strftime(" %d/%m/%y " "%H:%M")  
-print(mascara_data_BR)
+    nome = input("nome: ")
+    person[nome] = ""
+    print(person)
+
+    if nome == "0":
+        break

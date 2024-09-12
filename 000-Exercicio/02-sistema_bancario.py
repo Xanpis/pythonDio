@@ -7,12 +7,14 @@ data = datas_horas_agora.strftime(mascara_data_BR)
 hora = datas_horas_agora.strftime(mascara_hora)
 
 
-menu = """
+menu = f"""
 
 [1] Depositar
 [2] Sacar
 [3] Extrato
-[4] Sair
+[4] Adiciona Usuário
+[5] Lista usuário
+[9] Sair
 
 => """
 
@@ -21,6 +23,12 @@ limite = 500
 extrato = ""
 numero_saques = 0
 LIMITE_SAQUES = 3
+person = {}
+# função usuário do banco
+def user(nome):
+    person[nome] = ""
+    print("Adicionado")
+    
 
 # Função de deposito
 def depositar(var):
@@ -28,10 +36,11 @@ def depositar(var):
     
     if var > 0: 
         saldo += var
-        extrato += f"Valor depositado = R$ {var:.2f} Data:{data} Hora:{hora} \n"
+        extrato += f"Deposito = R$ {var:.2f} Data:{data} Hora:{hora} \n"
     else:
         print(f"Digite um valor maior que {var}")        
 
+    
 #  Função sacar
 def sacar(var):
     global saldo, extrato,limite,numero_saques,LIMITE_SAQUES
@@ -46,14 +55,24 @@ def sacar(var):
         elif saldo >= var:
             saldo -= var
             numero_saques += 1
-            print('Dinheiro Sacado')   
-            extrato += f'saque: {numero_saques}\n'   
-            extrato += f'Dinheiro Sacado: R$ {var:.2f} Data:{data} Hora:{hora}\n'   
+            print('Dinheiro Sacado')      
+            extrato += f'Saque: R$ {var:.2f} Data:{data} Hora:{hora}\n'   
         else:
             print("Saldo insuficiente")
 
     else:
         print(f"Digite um valor maior que {var}")  
+
+# Função Extrato
+def extrato_conta():
+    
+    print("         Extrato de transações")
+    print("------------------------------------- ")
+    print("Não tem operações na sua conta" if not extrato else extrato)
+    print("------------------------------------- \n")
+    print(f"Saldo: R$ {saldo:.2f}")
+    print(f"Numero de saques: = {numero_saques}")
+    print("------------------------------------- \n")
 
 
 while True:
@@ -74,21 +93,29 @@ while True:
             sacar(var)
         except:
             print("Erro de operação")
-      
-            
+                 
     # Extrato          
     elif op == "3":
-        print("         Extrato de transações")
-        print("------------------------------------- ")
-        print("Não tem operações na sua conta" if not extrato else extrato)
-        print("------------------------------------- \n")
-        print(f"Saldo: R$ {saldo:.2f}")
-        print(f"Numero de saques: = {numero_saques}")
-        print("------------------------------------- \n")
+        extrato_conta()
     
+    # Adicionar usuário
     elif op == "4":
+        name = input("Qual seu nome: ")
+        user(name)
+        
+    elif op == "5":
+        if not person:
+            print("Não tem usuário")
+        else:   
+            for i,v in enumerate(person, start=1):
+                print(f"{i}: {v}")
+            
+        
+    # Sair
+    elif op == "9":
         print('Obrigado!!!')
         break
     
     else:
+
         print("Opção invalida")
