@@ -1,10 +1,10 @@
 from datetime import datetime, date, time
 
-datas_horas_agora = datetime.now()
-mascara_data_BR = " %d/%m/%y " 
-mascara_hora = " %H:%M "
-data = datas_horas_agora.strftime(mascara_data_BR)  
-hora = datas_horas_agora.strftime(mascara_hora)
+# datas_horas_agora = datetime.now()
+# mascara_data_BR = " %d/%m/%y " 
+# mascara_hora = " %H:%M "
+# data = datas_horas_agora.strftime(mascara_data_BR)  
+# hora = datas_horas_agora.strftime(mascara_hora)
 
 
 menu = f"""
@@ -24,23 +24,24 @@ extrato = ""
 numero_saques = 0
 LIMITE_SAQUES = 3
 person = {}
-# função usuário do banco
+
+
+# Adicionar usuário no banco
 def user(nome):
     person[nome] = ""
     print("Adicionado")
     
-
 # Função de deposito
 def depositar(var):
     global saldo,extrato
     
     if var > 0: 
+        data_hora= datetime.now()
         saldo += var
-        extrato += f"Deposito = R$ {var:.2f} Data:{data} Hora:{hora} \n"
+        extrato += f"Deposito: R$ {var:.2f} Data:{data_hora.strftime(" %d/%m/%y ")} Hora:{data_hora.strftime(" %H:%M ")} \n"
     else:
         print(f"Digite um valor maior que {var}")        
-
-    
+   
 #  Função sacar
 def sacar(var):
     global saldo, extrato,limite,numero_saques,LIMITE_SAQUES
@@ -53,10 +54,11 @@ def sacar(var):
             print(f"Valor acima do limite R$ {limite}")        
                 
         elif saldo >= var:
+            data_hora= datetime.now()
             saldo -= var
             numero_saques += 1
             print('Dinheiro Sacado')      
-            extrato += f'Saque: R$ {var:.2f} Data:{data} Hora:{hora}\n'   
+            extrato += f'Saque: R$ {var:.2f} Data:{data_hora.strftime(" %d/%m/%y ")} Hora:{data_hora.strftime(" %H:%M ")}\n'   
         else:
             print("Saldo insuficiente")
 
@@ -102,7 +104,8 @@ while True:
     elif op == "4":
         name = input("Qual seu nome: ")
         user(name)
-        
+
+    # Listar usuario
     elif op == "5":
         if not person:
             print("Não tem usuário")
@@ -110,7 +113,6 @@ while True:
             for i,v in enumerate(person, start=1):
                 print(f"{i}: {v}")
             
-        
     # Sair
     elif op == "9":
         print('Obrigado!!!')
