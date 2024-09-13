@@ -51,6 +51,7 @@ def criar_conta(agencia,numero_conta,user):
         cpf = int(input(f"informe o CPF (somente números): "))     
     except:
         print("Apenas números ")
+        return
         
     usu = filtra_user(cpf, user)     
         
