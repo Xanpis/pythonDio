@@ -1,4 +1,6 @@
+
 from datetime import datetime, date, time
+import textwrap
 
 # datas_horas_agora = datetime.now()
 # mascara_data_BR = " %d/%m/%y " 
@@ -7,44 +9,76 @@ from datetime import datetime, date, time
 # hora = datas_horas_agora.strftime(mascara_hora)
 
 
-menu = f"""
+def menu():
+    menu = f"""
 
-[1] Depositar
-[2] Sacar
-[3] Extrato
-[4] Adiciona Usuário
-[5] Lista usuário
-[9] Sair
+    [1] Depositar
+    [2] Sacar
+    [3] Extrato
+    [4] Novo Usuário
+    [5] Criar conta
+    [6] Lista conta
+    [9] Sair
 
-=> """
-
-saldo = 0
-limite = 500
-extrato = ""
-numero_saques = 0
-LIMITE_SAQUES = 3
-person = {}
+    => """
+    return input(textwrap.dedent(menu))
 
 
 # Adicionar usuário no banco
-def user(nome):
-    person[nome] = ""
-    print("Adicionado")
+def user(user:list):
+    try:
+        cpf = int(input(f"informe o CPF (somente números): "))
+    except:
+        print("Apenas números ")
+        return
+        
+    usu = filtra_user(cpf, user)     
+        
+    if usu:
+        print("Usuário Já Existe!!")
+        return
+    nome = input("Nome: ")
+    data_nascimento = input("Data de nascimento: ")
+    ender= input("Endereço: ")
     
-# Função de deposito
-def depositar(var):
-    global saldo,extrato
-    
+    user.append({"nome": nome, "data_nascimento": data_nascimento, "cpf": cpf, "endereco": ender})
+    print("Usuário Criado ")
+
+# Criando conta para user
+def criar_conta(agencia,numero_conta,user):
+    try:
+        cpf = int(input(f"informe o CPF (somente números): "))     
+    except:
+        print("Apenas números ")
+        
+    usu = filtra_user(cpf, user)     
+        
+    if usu:
+        print("Conta criada")
+        return {"agencia": agencia, "numero_conta": numero_conta, "usuario":usu}
+    print("Usuário não encontrado")
+
+# Filtrando user    
+def filtra_user(cpf,user):
+    filtra_user = [us for us in user if us["cpf"] == cpf]
+    return filtra_user[0] if filtra_user else None
+ 
+# Função de deposito com argumento por posição
+def depositar(saldo, extrato, var,/):
     if var > 0: 
         data_hora= datetime.now()
         saldo += var
-        extrato += f"Deposito: R$ {var:.2f} Data:{data_hora.strftime(" %d/%m/%y ")} Hora:{data_hora.strftime(" %H:%M ")} \n"
+        # extrato += f"Deposito: R${var:.2f}\tData: {data_hora.strftime("%d/%m/%y")}\tHora:{data_hora.strftime("%H:%M")}\n"
+        extrato += f'Dep:\tR$ {var:.2f}\tData:{data_hora.strftime(" %d/%m/%y ")}\tHora:{data_hora.strftime(" %H:%M ")}\n'
+        print("Adicionado")        
     else:
-        print(f"Digite um valor maior que {var}")        
-   
-#  Função sacar
-def sacar(var):
-    global saldo, extrato,limite,numero_saques,LIMITE_SAQUES
+        print(f"Digite um valor maior que {var}")   
+        
+    return saldo,extrato     
+       
+#  Função sacar com argumentos nomeados
+def sacar(*,saldo, extrato,limite,numero_saques, LIMITE_SAQUES, var):
+  
     
     if var > 0: 
         if numero_saques == LIMITE_SAQUES:
@@ -58,66 +92,103 @@ def sacar(var):
             saldo -= var
             numero_saques += 1
             print('Dinheiro Sacado')      
-            extrato += f'Saque: R$ {var:.2f} Data:{data_hora.strftime(" %d/%m/%y ")} Hora:{data_hora.strftime(" %H:%M ")}\n'   
+            extrato += f'Saque: \tR$ {var:.2f}\tData:{data_hora.strftime(" %d/%m/%y ")}\tHora:{data_hora.strftime(" %H:%M ")}\n'   
         else:
             print("Saldo insuficiente")
 
     else:
-        print(f"Digite um valor maior que {var}")  
+        print(f"Digite um valor maior que {var}")          
+    return saldo, extrato,numero_saques
 
-# Função Extrato
-def extrato_conta():
+# Função Extrato de forma posicional e nomeada 
+def extrato_conta(extrato,/,*,saldo,numero_saques):
     
     print("         Extrato de transações")
     print("------------------------------------- ")
     print("Não tem operações na sua conta" if not extrato else extrato)
     print("------------------------------------- \n")
     print(f"Saldo: R$ {saldo:.2f}")
-    print(f"Numero de saques: = {numero_saques}")
+    print(f"Numero de saques: {numero_saques}")
     print("------------------------------------- \n")
-
-
-while True:
-    op = input(menu)
+ 
+def lista_conta(contas):
+    for con in contas:
+        linha = f"""
+            Agencia:\t{con['agencia']}
+            C/C:\t\t{con['numero_conta']}
+            Titular:\t{con['usuario']['nome']}
+        """
+        print("=" * 100)
+        print(textwrap.dedent(linha))
     
-    # Depositar
-    if op == "1":
-        try:
-            var = float(input('Valor a ser depositado = R$ '))
-            depositar(var)
-        except:
-            print("Erro de operação")
+def main():
+    
+    saldo = 0
+    limite = 500
+    extrato = ""
+    numero_saques = 0
+    LIMITE_SAQUES = 3
+    pessoas = []
+    contas = []
+    AGENCIA = "0001"
+    
+    while True:
+        op = menu()
+        
+        # Depositar
+        if op == "1":
+            try:
+                var = float(input('Valor a ser depositado = R$ '))
+                saldo,extrato = depositar(saldo,extrato,var)
+            except:
+                print("Erro de operação")
+                
+        # Sacar        
+        elif op == "2":
+            try:
+                var = float(input("Valor a ser sacado: = R$ "))
+                saldo, extrato,numero_saques = sacar(
+                    saldo = saldo,
+                    extrato = extrato,
+                    limite = limite,
+                    numero_saques = numero_saques,
+                    LIMITE_SAQUES = LIMITE_SAQUES,
+                    var = var,
+                )
+            except:
+                print("Erro de operação")
+                    
+        # Extrato          
+        elif op == "3":
+            extrato_conta(
+                 extrato,
+                saldo = saldo,
+                numero_saques = numero_saques
+            )
+        
+        # Adicionar usuário
+        elif op == "4":
+            user(pessoas)
+
+        # Criar conta
+        elif op == "5":
+            # O numero da conta do usario sempre vai aumentando em 1
+            numero_conta = len(contas) + 1
+            conta = criar_conta(AGENCIA,numero_conta,pessoas)
+           
+            if conta:
+                contas.append(conta)    
+       
+        elif op == "6":
+            lista_conta(contas)
+       
+        # Sair
+        elif op == "9":
+            print('Obrigado!!!')
+            break
+        
+        else:
+            print("Opção invalida")
             
-    # Sacar        
-    elif op == "2":
-        try:
-            var = float(input("Valor a ser sacado: = R$ "))
-            sacar(var)
-        except:
-            print("Erro de operação")
-                 
-    # Extrato          
-    elif op == "3":
-        extrato_conta()
-    
-    # Adicionar usuário
-    elif op == "4":
-        name = input("Qual seu nome: ")
-        user(name)
+main()
 
-    # Listar usuario
-    elif op == "5":
-        if not person:
-            print("Não tem usuário")
-        else:   
-            for i,v in enumerate(person, start=1):
-                print(f"{i}: {v}")
-            
-    # Sair
-    elif op == "9":
-        print('Obrigado!!!')
-        break
-    
-    else:
-
-        print("Opção invalida")
