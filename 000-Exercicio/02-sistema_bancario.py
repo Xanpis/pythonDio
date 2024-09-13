@@ -110,7 +110,8 @@ def extrato_conta(extrato,/,*,saldo,numero_saques):
     print(f"Saldo: R$ {saldo:.2f}")
     print(f"Numero de saques: {numero_saques}")
     print("------------------------------------- \n")
- 
+
+# listando canta 
 def lista_conta(contas):
     for con in contas:
         linha = f"""
