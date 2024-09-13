@@ -25,7 +25,7 @@ def menu():
 
 
 # Adicionar usuário no banco
-def user(user:list):
+def user(user:list):   
     try:
         cpf = int(input(f"informe o CPF (somente números): "))
     except:
@@ -37,6 +37,7 @@ def user(user:list):
     if usu:
         print("Usuário Já Existe!!")
         return
+    
     nome = input("Nome: ")
     data_nascimento = input("Data de nascimento: ")
     ender= input("Endereço: ")
