@@ -28,12 +28,11 @@ def menu():
 def user(user:list):   
     try:
         cpf = int(input(f"informe o CPF (somente números): "))
+        usu = filtra_user(cpf, user)    
     except:
         print("Apenas números ")
         return
-        
-    usu = filtra_user(cpf, user)     
-        
+           
     if usu:
         print("Usuário Já Existe!!")
         return
@@ -48,12 +47,11 @@ def user(user:list):
 # Criando conta para user
 def criar_conta(agencia,numero_conta,user):
     try:
-        cpf = int(input(f"informe o CPF (somente números): "))     
+        cpf = int(input(f"informe o CPF (somente números): "))
+        usu = filtra_user(cpf, user)         
     except:
         print("Apenas números ")
-        return
-        
-    usu = filtra_user(cpf, user)     
+        return    
         
     if usu:
         print("Conta criada")
