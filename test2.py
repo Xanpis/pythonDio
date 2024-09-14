@@ -13,5 +13,4 @@ from time import strptime
 #     if nome == "0":
 #         break
 
-data_hora= datetime.now()
-print(f" Data{data_hora.strftime(" %d/%m/%y ")} Hora:{data_hora.strftime(" %H:%M ")}")
+
