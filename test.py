@@ -44,8 +44,14 @@
 # print(resultado,"---",resultado2)  
 
 fu = input( 'digite = ')
+s = fu.split(',')
+var = []
+for i in s:
+    if i.strip():
+        var.append(i.strip())
+print('Vs linhas = ',var)
 
-s = fu.split()
-produtos = fu.strip() 
 
-print(produtos)
+
+vary = [nome.strip() for nome in s if nome.strip()]
+print('Uma linha = ',vary)
