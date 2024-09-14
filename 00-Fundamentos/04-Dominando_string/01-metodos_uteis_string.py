@@ -5,11 +5,6 @@ funciona o fatiamento
 
 """
 
-
-
-from shlex import join
-
-
 nome = "pYtHon"
 #  método par transforma a primeira letra em maiúsculo
 print("###### inicio ######")

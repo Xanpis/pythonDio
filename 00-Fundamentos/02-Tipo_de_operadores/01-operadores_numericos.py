@@ -1,4 +1,4 @@
-# Ordem de precedencia das Operação Matematicas 
+# Ordem de precedência das Operação Matemáticas 
 """
 Parêntesis
 Expoentes
