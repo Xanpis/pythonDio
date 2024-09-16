@@ -52,6 +52,5 @@ for i in s:
 print('Vs linhas = ',var)
 
 
-
 vary = [nome.strip() for nome in s if nome.strip()]
 print('Uma linha = ',vary)
