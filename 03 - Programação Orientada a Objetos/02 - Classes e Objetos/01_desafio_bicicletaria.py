@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-"""
- 
- """   
+
+
 class Bicicleta:
     """
     O que é o self, O self é uma referencia para o objeto, Uma referencia explicita,
