@@ -1,0 +1,6 @@
+Alguns paradigma 
+
+imperativo ou procedural
+funcional 
+Orientado a eventos
+Orientado a objetos
