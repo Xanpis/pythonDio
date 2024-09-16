@@ -14,9 +14,7 @@ def produto_mais_vendido(produtos):
         # TODO: Encontre o produto com a maior contagem:
         if count > max_count:
             max_count = count
-            max_produto = produto
-            
-        
+            max_produto = produto            
     
     return max_produto
 
