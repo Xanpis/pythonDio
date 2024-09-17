@@ -7,6 +7,12 @@ class Animal:
 
 
 class Mamifero(Animal):
+    """" 
+     Se ussa o **kw quando eu tenho valores que se repetem no construtor da classe errada, 
+     Quando eur tenho dois valore em classes diferentes e quero passar 3 argumentos o python
+     nao indene para onde passar esse argumentos por isso eu uso o **kws que assim 
+     eu tenho que passar os argumentos nomeados com chave e valor.
+    """
     def __init__(self, cor_pelo, **kw):
         self.cor_pelo = cor_pelo
         super().__init__(**kw)
@@ -27,7 +33,7 @@ class Ornitorrinco(Mamifero, Ave):
         super().__init__(cor_pelo=cor_pelo, cor_bico=cor_bico, nro_patas=nro_patas)
 
 
-gato = Gato(nro_patas=4, cor_pelo="Preto")
+gato = Gato(nro_patas=2,cor_pelo='verde')
 print(gato)
 
 ornitorrinco = Ornitorrinco(nro_patas=2, cor_pelo="vermelho", cor_bico="laranja")
