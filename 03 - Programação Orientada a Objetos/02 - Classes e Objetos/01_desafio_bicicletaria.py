@@ -61,5 +61,6 @@ b2.correr()
 
 # Referencia explicita 
 b3 = Bicicleta("Marron", "Quadro de moça", 2005, 300)
-
-
+b3.buzinar() # Chamada normal 
+# Quando O python faz uma referencia explicita ao objeto é uma como se fosse
+Bicicleta.buzinar(b3) 
