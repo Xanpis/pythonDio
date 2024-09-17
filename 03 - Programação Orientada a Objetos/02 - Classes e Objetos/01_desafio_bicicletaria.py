@@ -32,8 +32,7 @@ class Bicicleta:
     def correr(self):
         print("Vrummmmm...")
 
-        
-        
+    
     # Retornando o nome da classe
     def __str__(self):
         """ 
