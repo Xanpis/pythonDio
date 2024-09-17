@@ -10,7 +10,7 @@ class Veiculo:
     def __str__(self):
         return f"{self.__class__.__name__}: {', '.join([f'{chave}={valor}' for chave, valor in self.__dict__.items()])}"
 
-# Herdando a class veículos
+# Herdando a class veículos  
 class Motocicleta(Veiculo):
     pass
 
@@ -21,11 +21,13 @@ class Carro(Veiculo):
 
 class Caminhao(Veiculo):
     def __init__(self, cor, placa, numero_rodas, carregado):
+        # Se eu chamar o construtor sem a classe super() eu sobrescrevo a os atributos da classe herda eu troco sua implementação 
+        # Ou seja eu tenho que escrever todo o atributo do construtor noma mente 
         super().__init__(cor, placa, numero_rodas)
         self.carregado = carregado
 
     def esta_carregado(self):
-        print(f"{'Sim' if self.carregado else 'Não'} estou carregado")
+        print(f"{'Sim' if not self.carregado else 'Não'} estou carregado")
 
 
 moto = Motocicleta("preta", "abc-1234", 2)
@@ -35,3 +37,4 @@ caminhao = Caminhao("roxo", "gfd-8712", 8, True)
 print(moto)
 print(carro)
 print(caminhao)
+
