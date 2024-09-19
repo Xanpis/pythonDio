@@ -10,15 +10,6 @@ class Carro(Veiculo):
             super().__init__(cor)
             self.lugares = lugares
 
-            
-class Caminhao(Veiculo):
-    def __init__(self,cor,capacidade_de_carga):
-        super().__init__(cor)
-        self.capacidade_de_carga = capacidade_de_carga
-
-
-class car_4x4(Caminhao,Carro):
-    pass
 
 
 """
