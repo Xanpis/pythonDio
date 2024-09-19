@@ -20,7 +20,6 @@ class Caminhao(Veiculo):
 class car_4x4(Caminhao,Carro):
     pass
 
-
 """
 Quando eu instício meu objeto o python não intende para qual construtor eu devo passar o segundo argumento
 para isso eu tenho o **kw, quando eu adiciono ele no construtor,
