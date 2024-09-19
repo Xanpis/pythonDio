@@ -1,4 +1,4 @@
-Alguns paradigma 
+Alguns paradigma da programação
 
 imperativo ou procedural
 funcional 

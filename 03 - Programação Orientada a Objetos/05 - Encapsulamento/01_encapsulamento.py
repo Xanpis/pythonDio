@@ -1,5 +1,6 @@
-class Conta:
+class Conta: 
     def __init__(self, nro_agencia, saldo=0):
+        # O python tem apenas uma coveação eu não garante o encapsulamento   
         self._saldo = saldo
         self.nro_agencia = nro_agencia
 
