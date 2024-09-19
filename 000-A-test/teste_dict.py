@@ -7,14 +7,13 @@ def produto_mais_vendido(produtos):
         else:
             contagem[produto] = 1
     
-    max_produto = None
+    max_produto = {}
     max_count = 0
-    
     for produto, count in contagem.items():
         # TODO: Encontre o produto com a maior contagem:
         if count > max_count:
             max_count = count
-            max_produto = produto            
+            max_produto[produto] = max_count            
     
     return max_produto
 

@@ -28,7 +28,7 @@ def obter_entrada_produtos():
     
     # estou retornado para produtos uma lista sem espaço, o  strip() 
     # não transforma o item em array nem itera array
-    produtos = [s.strip() for s in lista_de_strings]
+    produtos = [s.strip() for s in lista_de_strings if s.strip()]
     return produtos
 
 produtos = obter_entrada_produtos()

@@ -6,7 +6,7 @@ numeros = [1, 1, 1, 2, 2, 3, 3,]
 uni = set(numeros)
 print(uni)
 
-# Eliminando Duplicados de um iteravel
+# Eliminando Duplicados de um iterável
 uni = set("abacaxi")
 print(sorted(uni))
 
