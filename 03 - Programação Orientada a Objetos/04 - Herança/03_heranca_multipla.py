@@ -42,6 +42,7 @@ class Ornitorrinco(Mamifero, Ave, Maxim) :
         # como Mamífero é o que executa primero o retorno faz a execução parar ali 
         print(Ornitorrinco.__mro__)
 
+
 """
   Também pode ser desse jeito 
   
