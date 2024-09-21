@@ -21,6 +21,7 @@ class Aviao(Passaro):
         print("Avião está decolando...")
 
 
+# Com o self que é a referencia da classe também fucina Mas é melhor aplicado dentro da classe
 def plano_voo(obj):
     obj.voar()
 
