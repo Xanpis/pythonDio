@@ -8,7 +8,9 @@ class Passaro:
 class Pardal(Passaro):
     def voar(self):
         print("Pardal pode voar")
-
+    # é uma maneira de referenciar a classe pai diretamente, 
+    # permitindo que você chame seus métodos sem precisar mencionar o nome da classe
+        return super().voar()
 
 class Avestruz(Passaro):
     def voar(self):
