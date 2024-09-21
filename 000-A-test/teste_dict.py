@@ -16,7 +16,7 @@ def produto_mais_vendido(produtos):
             max_count = count
             max_produto[produto] = max_count            
     
-    return max_produto
+    return contagem, max_produto
 
 def obter_entrada_produtos():
   
@@ -28,5 +28,10 @@ def obter_entrada_produtos():
     return produtos
 
 produtos = obter_entrada_produtos()
-print(produto_mais_vendido(produtos))
+cont, max = produto_mais_vendido(produtos)
+print(f"""      
+    Todos = {cont}  
+    
+    Máximo = {max}   
+    """)
 
