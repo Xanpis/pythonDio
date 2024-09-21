@@ -1,3 +1,5 @@
+
+# A palavra polimorfismo significa muitos formas, Ou seja voce pose ter os mesmos métodos mas coma assinatura deferente 
 class Passaro:
     def voar(self):
         print("Voando...")
