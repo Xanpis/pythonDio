@@ -20,7 +20,9 @@ class Carro(Veiculo):
 
 
 class Caminhao(Veiculo):
+    
     def __init__(self, cor, placa, numero_rodas, carregado):
+        
         # Se eu chamar o construtor sem a classe super() eu sobrescrevo a os atributos da classe herda eu troco sua implementação 
         # Ou seja eu tenho que escrever todo o atributo do construtor noma mente 
         super().__init__(cor, placa, numero_rodas)

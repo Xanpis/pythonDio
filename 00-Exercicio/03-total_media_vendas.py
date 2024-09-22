@@ -1,17 +1,3 @@
-from datetime import datetime, date, time, timezone, tzinfo
-from time import strptime
-
-# datas_horas = datetime.now()
-# print(datas_horas.strftime("%H:%M"))
-# person = {}
-# while True:
-
-#     nome = input("nome: ")
-#     person[nome] = ""
-#     print(person)
-
-#     if nome == "0":
-#         break
 
 def analise_vendas(vendas):
     # TODO: Calcule o total de vendas e realize a média mensal:
@@ -25,10 +11,14 @@ def analise_vendas(vendas):
     return f"{total_vendas}, {media_vendas:.2f}"
 
 def obter_entrada_vendas():
-    # Solicita a entrada do usuário em uma única linha
+
     entrada = input()
+    
     # TODO: Converta a entrada em uma lista de inteiros:
     lista_de_strings = entrada.split(',')
+    
+    # No Map eu  passo o tipo que vai ser convertido e a lista e ele me retorna um objeto do tipo map 
+    # Então eu uso a lista para converter para lista 
     vendas = list(map(int,lista_de_strings))
     
     return vendas
