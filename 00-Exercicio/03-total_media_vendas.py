@@ -11,11 +11,9 @@ def analise_vendas(vendas):
     return f"{total_vendas}: {media_vendas:.2f}"
 
 def obter_entrada_vendas():
-
     entrada = input()
-    
+ 
     # TODO: Converta a entrada em uma lista de inteiros:
-   
     lista_de_strings = entrada.split(',')
     
     # No Map eu  passo o tipo que vai ser convertido e a lista e ele me retorna um objeto do tipo map 
