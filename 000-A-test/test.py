@@ -15,8 +15,7 @@ class Carro:
         self.placa = placa
         
     def __str__(self):
-        return self.__class__.__name__
+        return f"{self.__class__.__name__} : {','.join( [f" {i}: {r}" for i , r  in self.__dict__.items()] )}"
     
     
-carro = Carro('guio','verde',23) 
-print(carro)
+    
