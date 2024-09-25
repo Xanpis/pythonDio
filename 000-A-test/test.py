@@ -8,6 +8,29 @@
 
 # print(resultado,"---",resultado2)  
 
+# carro = {}
+# while True:
+#     print('1 - Cadastra') 
+#     print('2 - lista') 
+#     print('0 - Sair')
+#     op = input('Opção: ')
+   
+#     if op == '1':
+#         dono =  input('Dono: ')
+#         cor =  input('Cor: ')
+#         placa =  input('Placa: ')
+
+#         car = Carro(dono, cor, placa)
+#         carro[car.dono] = {'cor':car.cor , 'placa': car.placa} 
+        
+#     elif op == '2':    
+#         for a,b in carro.items():
+#             print(f"Dono: {a} | Cor: {b['cor']} | Placa: {b['placa']}")
+        
+#     elif op == '0':
+#         break
+    
+
 
 class Carro:
     def __init__(self,dono,cor,placa) -> None:
@@ -18,9 +41,10 @@ class Carro:
     def __str__(self):
         return f"{self.__class__.__name__} : {','.join( [f" {i}: {r}" for i , r  in self.__dict__.items()] )}"
     
-carro = {}
+carro = []
 while True:
     print('1 - Cadastra') 
+    print('2 - lista') 
     print('0 - Sair')
     op = input('Opção: ')
    
@@ -30,9 +54,15 @@ while True:
         placa =  input('Placa: ')
 
         car = Carro(dono, cor, placa)
-        carro[car.dono] = [car.cor , car.placa]
+        carro.append(car)
+        
+    elif op == '2':    
+        for i in carro:
+            print(i)
+        
     elif op == '0':
         break
     
-for a,b in carro.items():
-    print(a,': ',b[0],b[1])
+    
+
+    
