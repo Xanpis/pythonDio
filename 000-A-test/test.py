@@ -8,6 +8,13 @@
 
 # print(resultado,"---",resultado2)  
 
+show = """
+    1 - Cadastra
+    2 - lista
+    0 - Sair
+"""
+# Variável Global
+carro = {}
 
 class Carro:
     def __init__(self,dono,cor,placa) -> None:
@@ -18,11 +25,11 @@ class Carro:
     def __str__(self):
         return f"{self.__class__.__name__} : {','.join( [f" {i}: {r}" for i , r  in self.__dict__.items()] )}"
     
-carro = {}
+    
+
+    
 while True:
-    print('1 - Cadastra') 
-    print('2 - lista') 
-    print('0 - Sair')
+    print(show)
     op = input('Opção: ')
    
     if op == '1':
