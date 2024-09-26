@@ -7,6 +7,7 @@ show = """
     0 - Sair
 """
 
+
 # lupe
 while True:
     print(show)
