@@ -1,9 +1,10 @@
-from fun_carro import add, lista
+from fun_carro import add, lista,remover
 
 # Menu
 show = """
-    1 - Cadastra
-    2 - lista
+    1 - Cadastra 
+    2 - lista 
+    3 - Remover 
     0 - Sair
 """
 
@@ -18,6 +19,9 @@ while True:
         
     elif op == '2':    
         lista()
+        
+    elif op == '3':    
+        remover()
         
     elif op == '0':
         break
