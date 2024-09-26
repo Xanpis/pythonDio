@@ -22,5 +22,8 @@ def lista():
     
 # remover
 def remover():
-    pass
-    
+    chave = input('Digite a placa: ')
+    for a,b  in carro.values()
+        if chave in b['placa']:
+            carro[a]
+        
