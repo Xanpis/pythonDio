@@ -2,17 +2,18 @@ from fun_carro import add, lista,remover
 
 # Menu
 show = """
-    1 - Cadastra 
-    2 - lista 
-    3 - Remover 
-    0 - Sair
+[1] Cadastra 
+[2] Listar 
+[3] Remover 
+[4] Sair
 """
 
 
-# lupe
+# lupe1
+
 while True:
     print(show)
-    op = input('Opção: ')
+    op = input('Opção:')
    
     if op == '1':
        add()
@@ -25,4 +26,4 @@ while True:
         
     elif op == '0':
         break
-    
+        

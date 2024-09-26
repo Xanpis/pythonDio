@@ -5,7 +5,7 @@ carro = {}
 
 # Adicionar um novo usuário
 def add():
-    dono =  input('Dono: ')
+    dono =  input('\nDono: ')
     cor =  input('Cor: ')
     placa =  input('Placa: ')
 
@@ -15,20 +15,31 @@ def add():
 
 # Lista usuários
 def lista():
-    print('######### LIsta De Carros ##########\n')
+    print('\n==================== LIsta De Carros ====================\n')
     for a,b in carro.items():
         print(f"Dono: {a} | Cor: {b['cor']} | Placa: {b['placa']}")
         print('--------------------------------------------------------')
     
 # remover
 def remover():
-    chave = input('Digite a placa: ')
+    lista()
+    chave = input('\nDigite a placa: ')
+    var = None
+    # placa = ''
+    
     for a,b  in carro.items():     
-        print(a,b)   
-        nome = a 
         if chave == b['placa']:
-           carro.pop(nome)
-           print('removido')
-           break
-        else:
-            print('Erro!! Placa Não Localizada.')
+           var = a 
+        #    placa = b['placa']
+   
+    if var is not None:
+        del carro[var]
+        print('\nRemovido!!')
+    else:
+        print("\nEro!! Placa não encontrada")
+        
+    
+       
+    
+    
+            
