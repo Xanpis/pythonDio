@@ -23,7 +23,8 @@ def lista():
 # remover
 def remover():
     chave = input('Digite a placa: ')
-    for a,b  in carro.values()
+    for a,b  in carro.values():
         if chave in b['placa']:
-            carro[a]
-        
+           del carro[a]
+        else:
+            print('Erro!! Placa Não Localizada.')
