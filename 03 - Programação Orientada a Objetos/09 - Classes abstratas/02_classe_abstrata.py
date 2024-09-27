@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod, abstractproperty
 
-
+# Como usar uma interface corretamente importar os módulos e coloque os Decoradores 
+# quando eu falo que minha classe é ABC eu não posso mais instanciá-la
 class ControleRemoto(ABC):
     @abstractmethod
     def ligar(self):
@@ -10,6 +11,7 @@ class ControleRemoto(ABC):
     def desligar(self):
         pass
 
+# Forçando a implementação de uma propriedade
     @property
     @abstractproperty
     def marca(self):
@@ -17,6 +19,8 @@ class ControleRemoto(ABC):
 
 
 class ControleTV(ControleRemoto):
+    
+# Agora eu sou obrigado a definir os dois methods
     def ligar(self):
         print("Ligando a TV...")
         print("Ligada!")

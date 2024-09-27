@@ -1,3 +1,4 @@
+
 class Foo:
     def __init__(self, x=None):
         self._x = x
@@ -16,5 +17,6 @@ class Foo:
 
 foo = Foo(10)
 print(foo.x)
-foo.x = 10 
+# só estou modificando o apontamento da memoria e não o seu valor 
+foo.x 
 print(foo.x)
