@@ -1,7 +1,9 @@
 class Estudante:
+    # Isso é um atributo de classe
     escola = "DIO"
 
     def __init__(self, nome, matricula):
+        # Isso é um atributo de instancia
         self.nome = nome
         self.matricula = matricula
 

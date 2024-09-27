@@ -13,24 +13,24 @@ def add():
     carro[car.dono] = {'cor':car.cor , 'placa': car.placa}    
     
 
-# Lista usuários
+# Lista Usuários
 def lista():
     print('\n==================== LIsta De Carros ====================\n')
     for a,b in carro.items():
         print(f"Dono: {a} | Cor: {b['cor']} | Placa: {b['placa']}")
         print('--------------------------------------------------------')
     
-# remover
+# remover Usuários
 def remover():
+    
     lista()
+    
     chave = input('\nDigite a placa: ')
     var = None
-    # placa = ''
     
     for a,b  in carro.items():     
         if chave == b['placa']:
            var = a 
-        #    placa = b['placa']
    
     if var is not None:
         del carro[var]
