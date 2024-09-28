@@ -12,7 +12,6 @@ def add():
     car = Carro(dono, cor, placa)
     carro[car.dono] = {'cor':car.cor , 'placa': car.placa}    
     
-
 # Lista Usuários
 def lista():
     print('\n==================== LIsta De Carros ====================\n')
