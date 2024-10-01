@@ -25,7 +25,8 @@ class Carro:
     def __str__(self):
         return f"{self.__class__.__name__} : {','.join( [f" {i}: {r}" for i , r  in self.__dict__.items()] )}"
     
-    
+    def cor(self):
+        print('verde')
     
 while True:
     print(show)
@@ -42,7 +43,8 @@ while True:
     elif op == '2':    
         print('######### LIsta De Carros ##########')
         for i in carro:
-            print(f'Dono: {i.dono} Cor: {i.cor}')
+            print(f'Dono: {i.dono} | Cor: {i.cor} | placa: {i.placa}')
+            print('-'*50)
         
     elif op == '0':
         break
