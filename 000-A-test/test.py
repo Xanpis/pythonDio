@@ -14,7 +14,7 @@ show = """
     0 - Sair
 """
 # Variável Global
-carro = {}
+carro = []
 
 class Carro:
     def __init__(self,dono,cor,placa) -> None:
@@ -26,7 +26,6 @@ class Carro:
         return f"{self.__class__.__name__} : {','.join( [f" {i}: {r}" for i , r  in self.__dict__.items()] )}"
     
     
-
     
 while True:
     print(show)
@@ -38,12 +37,12 @@ while True:
         placa =  input('Placa: ')
 
         car = Carro(dono, cor, placa)
-        carro[car.dono] = {'cor':car.cor , 'placa': car.placa} 
+        carro.append(car)
         
     elif op == '2':    
         print('######### LIsta De Carros ##########')
-        for a,b in carro.items():
-            print(f"Dono: {a} | Cor: {b['cor']} | Placa: {b['placa']}")
+        for i in carro:
+            print(f'Dono: {i.dono} Cor: {i.cor}')
         
     elif op == '0':
         break
