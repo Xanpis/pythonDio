@@ -1,5 +1,4 @@
 
-
 def analise_vendas(vendas):
     
     media_vendas = 0
