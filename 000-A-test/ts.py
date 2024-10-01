@@ -10,18 +10,14 @@ class Categoria:
         self.vendas = []
 
     # TODOS: Implementar o método adicionar_venda para adicionar uma venda à lista de vendas:
-    def adicionar_venda(self,venda):
-        if venda.__class__.__name__ == "Venda":
-            self.vendas.append(venda)
-            return True
-        return False
-    
+    def adicionar_venda(self, venda):
+        self.vendas.append(venda)
+
     # TODOS: Implementar o método total_vendas para calcular e retornar o total das vendas
-    def total_de_vendas(self):
+    def total_vendas(self):
         total = 0
-        for venda in self.vendas:
-            total = total + venda.valor
-            
+        for venda in self.vendas
+          total = total + venda.valor
         return total
 
 def main():
@@ -46,9 +42,8 @@ def main():
     # Exibindo os totais de vendas para cada categoria
     for categoria in categorias:
         # TODOS: Exibir o total de vendas usando o método total_vendas:
-        total_vendas = categoria.total_de_vendas()
-        print(f"Vendas em {categoria.nome} : {total_vendas}")
+        total = categoria.total_vendas()
+        print(f"Vendas em {categoria.nome}: {total:.1f}")
         
-         
 if __name__ == "__main__":
     main()
