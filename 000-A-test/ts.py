@@ -16,7 +16,7 @@ class Categoria:
     # TODOS: Implementar o método total_vendas para calcular e retornar o total das vendas
     def total_vendas(self):
         total = 0
-        for venda in self.vendas
+        for venda in self.vendas:
           total = total + venda.valor
         return total
 
