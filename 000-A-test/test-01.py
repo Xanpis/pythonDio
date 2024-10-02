@@ -24,7 +24,6 @@ def add():
     array.append(conta)
         
 array = []
-
 add()
 
 for i in array:
