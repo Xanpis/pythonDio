@@ -38,6 +38,7 @@ def main():
             valor = float(valor.strip())
 
             venda = Venda(produto.strip(), quantidade, valor)
+            
             # TODOS: Adicione a venda à categoria usando o método adicionar_venda:
             categoria.adicionar_venda(venda)
 
@@ -45,6 +46,7 @@ def main():
     
     # Exibindo os totais de vendas para cada categoria
     for categoria in categorias:
+        
         # TODOS: Exibir o total de vendas usando o método total_vendas:
         total_vendas = categoria.total_de_vendas()
         print(f"Vendas em {categoria.nome} : {total_vendas}")

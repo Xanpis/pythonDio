@@ -1,5 +1,4 @@
 
-
 vet = [1,2,3,4,5,6,7,8,9,10]
 
 p = len(vet) 
@@ -10,6 +9,7 @@ while True:
   if p == 0:
       break
 print("C: ",c)
+
 
 d=[]
 for i in range(len(vet), 0, -1):
