@@ -20,9 +20,9 @@ class Categoria:
     def total_de_vendas(self):
         total = 0
         for venda in self.vendas:
-            total = total + venda.valor
-            
+            total = total + venda.valor          
         return total
+
 
 def main():
     categorias = []
