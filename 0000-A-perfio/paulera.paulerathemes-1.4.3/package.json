@@ -1,12 +1,12 @@
 {
-	"name": "paulerathemes",
-	"displayName": "Pão's themes",
+	"name": "xanpis dark theme",
+	"displayName": "xanpis dark themes",
 	"version": "1.4.3",
-	"publisher": "Paulera",
-	"description": "temas do pao",
+	"publisher": "xanpis",
+	"description": "temas dark xanpis",
 	"icon": "icon.png",
 	"author": {
-		"name": "Paulo Evangelista"
+		"name": "xanpis"
 	},
 	"categories": [
 		"Themes"
@@ -23,45 +23,17 @@
 	"contributes": {
 		"themes": [
 			{
-				"label": "Pão's Monokai",
+				"label": "xanpis dark theme",
 				"uiTheme": "vs-dark",
-				"path": "./themes/blackpurple.json"
-			},
-			{
-				"label": "Pão's Monokai v2",
-				"uiTheme": "vs-dark",
-				"path": "./themes/blackpurple2.json"
-			},
-			{
-				"label": "Pão's Monokai v3",
-				"uiTheme": "vs-dark",
-				"path": "./themes/blackpurple3.json"
-			},
-			{
-				"label": "Pão's Lyo",
-				"uiTheme": "vs-dark",
-				"path": "./themes/lyo.json"
+				"path": "./themes/xanpis.json"
 			}
+	
 		]
 	},
 	"license": "The Unlicense",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/paulo-evangelista"
-	},
-	"homepage": "https://github.com/paulo-evangelista",
-	"__metadata": {
-		"id": "eea3734e-a025-4603-8e06-dee13db51f07",
-		"publisherId": "a96bcfc7-63e1-42c5-99cf-37e01e84ac38",
-		"publisherDisplayName": "Paulera",
-		"targetPlatform": "undefined",
-		"isApplicationScoped": false,
-		"updated": true,
-		"isPreReleaseVersion": false,
-		"installedTimestamp": 1727898225532,
-		"preRelease": false,
-		"hasPreReleaseVersion": false,
-		"pinned": false,
-		"source": "gallery"
+		"url": "https://github.com/Xanpis"
 	}
+	
 }

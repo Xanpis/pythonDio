@@ -2,7 +2,7 @@
 	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 		<Metadata>
 			<Identity Language="en-US" Id="paulerathemes" Version="1.4.3" Publisher="Paulera" />
-			<DisplayName>Pão&apos;s themes</DisplayName>
+			<DisplayName>xampis dark theme</DisplayName>
 			<Description xml:space="preserve">temas do pao</Description>
 			<Tags>theme,color-theme,__web_extension</Tags>
 			<Categories>Themes</Categories>
@@ -16,11 +16,11 @@
 				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
 				
 				
-				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/paulo-evangelista" />
-				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/paulo-evangelista" />
-				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/paulo-evangelista" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/Xanpis" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/Xanpis" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/Xanpis" />
 				
-				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/paulo-evangelista" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/Xanpis" />
 				
 				
 				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
