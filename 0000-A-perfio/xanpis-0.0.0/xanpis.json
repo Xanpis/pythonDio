@@ -315,10 +315,17 @@
                 "variable.other.constant",
                 "meta.property-name",
                 "support",
+<<<<<<< HEAD
                 "string.other.link.title.markdown",
             ],
             "settings": {
                 "foreground":  "#76e2fd"
+=======
+                "string.other.link.title.markdown"
+            ],
+            "settings": {
+                "foreground": "#79b8ff"
+>>>>>>> 30e91da96497a537cd2c4efae4d258c208b1139a
             }
         },
         {
@@ -355,7 +362,11 @@
         {
             "scope": "variable.parameter.function",
             "settings": {
+<<<<<<< HEAD
                 "foreground": "#f1bd5be0",
+=======
+                "foreground": "#FF9800"
+>>>>>>> 30e91da96497a537cd2c4efae4d258c208b1139a
             }
         },
         {
@@ -457,7 +468,11 @@
                 "string.quoted"
             ],
             "settings": {
+<<<<<<< HEAD
                 "foreground": "#e7de79"  
+=======
+                "foreground": "#e7de79"  // Cor desejada para strings
+>>>>>>> 30e91da96497a537cd2c4efae4d258c208b1139a
             }
         },
         {
@@ -465,6 +480,7 @@
                 "variable.parameter"
             ],
             "settings": {
+<<<<<<< HEAD
                 "foreground": "#f1bd5be0", 
             }
         },
@@ -485,6 +501,11 @@
                 "foreground": "#ff9800" 
             }
           },
+=======
+                "foreground": "#ff9800" // Escolha a cor que preferir
+            }
+        },
+>>>>>>> 30e91da96497a537cd2c4efae4d258c208b1139a
 
     ]
 }
