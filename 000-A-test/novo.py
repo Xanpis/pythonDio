@@ -2,7 +2,7 @@ class Venda:
     def __init__(self, produto, quantidade, valor):
         self.produto = produto
         self.quantidade = quantidade
-        self.valor = valor,"valor"
+        self.valor = valor
 
 class Categoria:
     def __init__(self, nome):
