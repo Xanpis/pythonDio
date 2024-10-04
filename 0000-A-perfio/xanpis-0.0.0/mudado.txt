@@ -1,0 +1,56 @@
+"editor.tokenColorCustomizations": {
+    "textMateRules": [
+        {
+            "scope": [
+                "entity.name.class",
+                "entity.name.type.class"
+            ],
+            "settings": {
+                "foreground": "#76e2fd" // cor para classes
+            }
+        },
+
+      
+
+      {
+        "scope": [
+            "constant.numeric" // Escopo para números
+        ],
+        "settings": {
+            "foreground": "#ff9800" // Cor desejada para números
+        }
+      },
+
+
+      {
+        "scope": "variable.parameter.function",
+        "settings": {
+            "foreground": "#f1bd5be0",
+        }
+    },
+    {
+      "scope": [
+          "variable.parameter"
+      ],
+      "settings": {
+          "foreground": "#f1bd5be0", // Escolha a cor que preferir
+      }
+  },
+  {
+    "scope": [
+        "constant.language",
+        "variable.language.this",
+        "variable.other.object",
+        "variable.other.class",
+        "variable.other.constant",
+        "meta.property-name",
+        "support",
+        "string.other.link.title.markdown"
+    ],
+    "settings": {
+        "foreground": "#76e2fd"
+    }
+},
+
+    ]
+}

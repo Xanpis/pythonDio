@@ -1,7 +1,6 @@
 
 def produto_mais_vendido(produtos):
     contagem = {}
-    
     for produto in produtos:
         if produto in contagem:
             contagem[produto] += 1
