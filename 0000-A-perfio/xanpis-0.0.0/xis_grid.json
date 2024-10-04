@@ -484,7 +484,16 @@
             "settings": {
                 "foreground": "#ff9800" 
             }
-          },
+        },
+        {
+        "scope": [
+            "entity.name.function",
+            "entity.name.method"
+        ],
+        "settings": {
+            "foreground": "#50fa78ee"  // Cor para métodos e funções
+        }
+        },
 
     ]
 }
