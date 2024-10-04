@@ -5,7 +5,7 @@ class Venda:
         self.valor = valor
 
 class Categoria:
-    def __init__(self, nome):
+    def __init__(self, nome ):
         self.nome = nome
         self.vendas = []
 

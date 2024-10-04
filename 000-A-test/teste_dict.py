@@ -27,10 +27,11 @@ def obter_entrada_produtos():
     return produtos
 
 produtos = obter_entrada_produtos()
-cont, max = produto_mais_vendido(produtos)
+cont, maxi = produto_mais_vendido(produtos)
 print(f"""      
     Todos = {cont}  
     
-    Máximo = {max}   
+    Máximo = {maxi}   
     """)
 
+()
