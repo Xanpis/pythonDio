@@ -13,6 +13,7 @@ com aguento retorna a lista de atributos valida para o objeto, ou seja seus mét
 
 """
 
+
 """
 Com o help() vazio eu posso buscar ajuda na documentação e com o nome do atributo como método eu posso 
 pesquisar tudo sobre aquele método 
