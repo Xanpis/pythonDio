@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from datetime import date,datetime
-from time import strftime
+
 
 
 class Transacao(ABC):
