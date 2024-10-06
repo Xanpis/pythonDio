@@ -13,7 +13,6 @@ Módulo (%)
 Multiplicação e Divisão (* e /)
 Adição e Subtração (+ e -)
 
-
 """  
 
 produto_1 = 10
@@ -25,6 +24,7 @@ print(produto_1 - produto_2)
 print(produto_1 / produto_2)
 print(produto_1 // produto_2)
 print(produto_1 * produto_2)
+
 # Modulo o resto da divisao de um número
 print(produto_1 % produto_2)
 print(produto_1 ** produto_2)
