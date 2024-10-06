@@ -4,6 +4,7 @@ while True:
     
     opcao = input('Digite um numero = ')
     
+    # Parando o laço
     if opcao == "10":
         break
     
