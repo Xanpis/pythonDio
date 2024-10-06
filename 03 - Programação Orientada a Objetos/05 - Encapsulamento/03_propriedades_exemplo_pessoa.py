@@ -9,6 +9,7 @@ class Pessoa:
     @property
     def name(self):
         return self.nome
+    
 
     # A qui eu preciso porque estou validando algo privado
     @property
