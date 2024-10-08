@@ -7,9 +7,7 @@ class User:
     def __str__(self) -> str:
         return f"{"  ".join([f"{chave}:{valor}" for chave,valor in self.__dict__.items()])}"
     
-    
-
-    
+      
 class Cadastros(): 
     def __init__(self) -> None:
         self.cadastrados = [] 
