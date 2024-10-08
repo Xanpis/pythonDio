@@ -1,4 +1,4 @@
-
+# pegando os dados dos usuários e seu carro 
 class User: 
     def __init__(self,name,placa) -> None:
         self.name = name
@@ -7,7 +7,7 @@ class User:
     def __str__(self) -> str:
         return f"{"  ".join([f"{chave}:{valor}" for chave,valor in self.__dict__.items()])}"
     
-      
+# Manipulando os dados   
 class Cadastros(): 
     def __init__(self) -> None:
         self.cadastrados = [] 
