@@ -1,11 +1,18 @@
+from datetime import datetime
+mascara_hora = "%H:%M"
+hora = datetime.now()
+
+
 # pegando os dados dos usuários e seu carro 
 class User: 
     def __init__(self,name,placa) -> None:
         self.name = name
         self.placa = placa
+        self.data = datetime.now().date()
+        self.hora = hora.time().strftime(mascara_hora)
         
     def __str__(self) -> str:
-        return f"{"  ".join([f"{chave}:{valor}" for chave,valor in self.__dict__.items()])}"
+        return f"{" | ".join([f"{chave}: {valor}" for chave,valor in self.__dict__.items()]).title()}"
     
 # Manipulando os dados   
 class Cadastros(): 
@@ -29,3 +36,6 @@ carro1 = User('joaninha', 125)
 ca.add(carro1)
 
 print(ca.buscarUser(123))
+
+p = "fasdf"
+print(p.title())
