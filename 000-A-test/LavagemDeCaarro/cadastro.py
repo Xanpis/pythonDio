@@ -12,7 +12,7 @@ class User:
     
     
 # Métodos para manipulação da classe User        
-class Carro: 
+class Car: 
 
     def __init__(self,user:User, cor , placa) -> None:
         self.user = user
@@ -36,7 +36,9 @@ class Carro:
         except Exception as e:
             print(f'@@@ placa erro {e} @@@ {self.name} ')   
             
-            
+class Trunk(Car):
+    pass
+       
             
 # métodos de manipulação 
 class Cadastrados:
@@ -48,26 +50,38 @@ class Cadastrados:
         self.user.append(obj)
         pass
             
-    def add_carro(self,obj:Carro):
+    def add_carro(self,obj:Car):
         self.cadastro.append(obj)
     
     def buscar_user_carro(self,placa:int):
         placaUser = "".join([f"{chave}" for chave in self.cadastro if chave.placa == placa])    
         return placaUser or False     
     
+    def show_all(self):
+        for i in self.cadastro:
+            
+        
     
         
 ca = Cadastrados()
 user = User('maria',23)
 ca.add_user(user)
 
-carro = Carro(user,'verde',123)
-ca.add(carro)
+carro = Car(user,'verde',123)
+ca.add_carro(carro)
+
+user = User('Tues',26)
+ca.add_user(user)
+
+carro = Car(user,'verde',124)
+ca.add_carro(carro)
 
 
-print(ca.buscarUser(345))
+
+
+print(ca.buscar_user_carro(123))
 print(100 * '-')
-print(carro.user.idade)
+print(ca.show_all())
 
 
 
