@@ -2,48 +2,68 @@
 
 # Dados relacionados com o usuário e o carro 
 class User: 
-    def __init__(self,name,placa) -> None:
+    def __init__(self,name,idade) -> None:
         self.name = name
-        self._placa = placa
-        
+        self.idade = idade
+
     def __str__(self) -> str:
         return f"Dono do carro = {" | ".join([f"{chave}: {valor}" for chave,valor in self.__dict__.items()]).title()}"
     
+    
+    
+# Métodos para manipulação da classe User        
+class Carro: 
+
+    def __init__(self,user:User, cor , placa) -> None:
+        self.user = user
+        self.cor = cor
+        self._placa = placa 
+         
+    def __str__(self) -> str:
+            return f"{self.user} | Cor: {self.cor} | Placa: {self._placa}"
+        
+    # encapsulamento
     @property
     def placa(self):
         return self._placa or 0
     
     @placa.setter
-    def placa(self,placa):
+    def placa(self, placa:int):
         try:
             if placa == 1:
-                self._placa                          
+                self._placa   # olhar porque o exception não esta funcionando                      
         except Exception as e:
             print(f'@@@ placa erro {e} @@@ {self.name} ')   
             
-
-    
-# funções para manipulação da classe User   
-class Cadastros(): 
+            
+            
+# métodos de manipulação 
+class Cadastrados:
     def __init__(self) -> None:
-        self._cadastrados = []   
-    
+        self.cadastro = [] 
+            
     def add(self,obj):
-        self._cadastrados.append(obj)
-    
-    def buscarUser(self,placa):
-        placaUser = "".join([f"{chave}" for chave in self._cadastrados if chave._placa == placa])    
-        return placaUser or False
-  
-    
-ca = Cadastros()
+        self.cadastro.append(obj)
 
-carro = User('joaninha', 123)
+    
+    def buscarUser(self,placa:int):
+        placaUser = "".join([f"{chave}" for chave in self.cadastro if chave.placa == placa])    
+        return placaUser or False     
+    
+    
+        
+ca = Cadastrados()
+user = User('maria',23)
+carro = Carro(user,'verde',123)
 ca.add(carro)
 
-carro = User('joão', 125)
+user = User('joana',63)
+carro = Carro(user,'verde',345)
 ca.add(carro)
-carro.placa = 2
 
-print(carro)
+print(ca.buscarUser(345))
+print(100 * '-')
+print(carro.user.idade)
+
+
 
