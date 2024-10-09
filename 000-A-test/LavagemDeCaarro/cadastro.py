@@ -49,6 +49,7 @@ class Trunk(Car):
 class Cadastrados:
     def __init__(self) -> None:
         pass
+    
     def add_user(self,obj:User):
         self.user.append(obj)
         pass
