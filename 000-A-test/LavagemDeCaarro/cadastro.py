@@ -1,6 +1,7 @@
+car,user = [],[]
 
 
-# Dados relacionados com o usuário e o carro 
+# Classe para usuário 
 class User: 
     def __init__(self,name,idade) -> None:
         self.name = name
@@ -9,9 +10,8 @@ class User:
     def __str__(self) -> str:
         return f"Dono do carro = {" | ".join([f"{chave}: {valor}" for chave,valor in self.__dict__.items()]).title()}"
     
-    
-    
-# Métodos para manipulação da classe User        
+        
+# Classe para cadastra o carro recebendo um objeto do tipo Usuário  
 class Car: 
 
     def __init__(self,user:User, cor , placa) -> None:
@@ -35,6 +35,11 @@ class Car:
                 self._placa   # olhar porque o exception não esta funcionando                      
         except Exception as e:
             print(f'@@@ placa erro {e} @@@ {self.name} ')   
+    
+    def buscar_id_placa(self,placa:int):
+        placaUser = "".join([f"{chave}" for chave in car if chave.placa == placa])    
+        return placaUser or False   
+    
             
 class Trunk(Car):
     pass
@@ -43,9 +48,7 @@ class Trunk(Car):
 # métodos de manipulação 
 class Cadastrados:
     def __init__(self) -> None:
-        self.cadastro = [] 
-        self.user =[]
-        
+        pass
     def add_user(self,obj:User):
         self.user.append(obj)
         pass
@@ -59,29 +62,30 @@ class Cadastrados:
     
     def show_all(self):
         for i in self.cadastro:
-            
+            print(100 * '-')
+            print(i)
         
     
         
-ca = Cadastrados()
-user = User('maria',23)
-ca.add_user(user)
+# ca = Cadastrados()
+# user = User('maria',23)
+# ca.add_user(user)
 
-carro = Car(user,'verde',123)
-ca.add_carro(carro)
+# carro = Car(user,'verde',123)
+# ca.add_carro(carro)
 
-user = User('Tues',26)
-ca.add_user(user)
+# user = User('Tues',26)
+# ca.add_user(user)
 
-carro = Car(user,'verde',124)
-ca.add_carro(carro)
-
-
+# carro = Car(user,'verde',124)
+# ca.add_carro(carro)
 
 
-print(ca.buscar_user_carro(123))
-print(100 * '-')
-print(ca.show_all())
+
+
+# print(ca.buscar_user_carro(123))
+# print(100 * '-')
+print(user)
 
 
 
