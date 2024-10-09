@@ -22,6 +22,7 @@ class Carro:
     def __str__(self) -> str:
             return f"{self.user} | Cor: {self.cor} | Placa: {self._placa}"
         
+        
     # encapsulamento
     @property
     def placa(self):
@@ -41,12 +42,16 @@ class Carro:
 class Cadastrados:
     def __init__(self) -> None:
         self.cadastro = [] 
+        self.user =[]
+        
+    def add_user(self,obj:User):
+        self.user.append(obj)
+        pass
             
-    def add(self,obj):
+    def add_carro(self,obj:Carro):
         self.cadastro.append(obj)
-
     
-    def buscarUser(self,placa:int):
+    def buscar_user_carro(self,placa:int):
         placaUser = "".join([f"{chave}" for chave in self.cadastro if chave.placa == placa])    
         return placaUser or False     
     
@@ -54,12 +59,11 @@ class Cadastrados:
         
 ca = Cadastrados()
 user = User('maria',23)
+ca.add_user(user)
+
 carro = Carro(user,'verde',123)
 ca.add(carro)
 
-user = User('joana',63)
-carro = Carro(user,'verde',345)
-ca.add(carro)
 
 print(ca.buscarUser(345))
 print(100 * '-')
