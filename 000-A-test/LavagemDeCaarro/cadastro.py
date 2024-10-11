@@ -64,9 +64,7 @@ class Car:
         placaUser = "".join([f"{chave}" for chave in car if chave.placa == placa])    
         return placaUser or False  
      
-       
-            
-    
+          
       
 class Trunk(Car):
     pass
