@@ -1,5 +1,7 @@
-car,user = [],[]
 
+
+
+car,user = [],[]
 
 # Classe para usuário 
 class User: 
@@ -25,6 +27,7 @@ class User:
     @staticmethod
     def validar_idade(idade):
         return isinstance(idade, int) and idade >= 18
+    
             
 # Classe para cadastra o carro recebendo um objeto do tipo Usuário  
 class Car: 
@@ -63,8 +66,7 @@ class Car:
     def buscar_id_placa(self,placa:int):
         placaUser = "".join([f"{chave}" for chave in car if chave.placa == placa])    
         return placaUser or False  
-     
-          
+              
       
 class Trunk(Car):
     pass
@@ -72,25 +74,28 @@ class Trunk(Car):
 
             
 # métodos de manipulação 
-class Lavagem_cadastrados:
-    def __init__(self) -> None:
-        pass
+class Lavar_cadastrados:
+    def __init__(self,placa,tempo) -> None:
+        
+        if not self.validar_placa(placa):
+            raise ValueError("A placa dever ter exatamente 5 números positivos")
+        
+        self.placa = placa
+        self.wash_array = []
+        self.tempo = validar_tempo(tempo)
+        
+    @staticmethod
+    def validar_placa(placa: str) -> bool:
+        return isinstance(placa, str) and len(placa) == 4
     
-    def add_user(self,obj:User):
-        self.user.append(obj)
+    # Tempo para os carros ficarem prontos
+    def validar_tempo(tempo) -> bool:
+        for i in car:
+            if i.__class__.__name__== "Car":
+                return  
+    
+    
 
-            
-    def add_carro(self,obj:Car):
-        self.cadastro.append(obj)
-    
-    def buscar_user_carro(self,placa:int):
-        placaUser = "".join([f"{chave}" for chave in car if chave.placa == placa])    
-        return placaUser or False     
-    
-    def show_all(self):
-        for i in self.cadastro:
-            print(100 * '-')
-            print(i)
         
 
 try:
