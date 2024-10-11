@@ -2,17 +2,30 @@ car,user = [],[]
 
 
 # Classe para usuário 
-class User: 
-    def __init__(self,name,idade) -> None:
-        self.name = name
-        self.idade = idade
 
+class User: 
+    try:
+        def __init__(self, name, idade) -> None:
+            if not self.validar_nome(name):
+                raise ValueError("Nome deve ser uma string e ter exatamente 5 caracteres.")
+            if not self.validar_idade(idade):
+                raise ValueError("Idade deve ser um número inteiro positivo.")
+            
+            self.name = name
+            self.idade = idade
+    except:
+        print('Nome ou idade incorreto')
+        
     def __str__(self) -> str:
-        return f"Dono do carro = {" | ".join([f"{chave}: {valor}" for chave,valor in self.__dict__.items()]).title()}"
+        return f"Dono do carro = {' | '.join([f'{chave}: {valor}' for chave, valor in self.__dict__.items()]).title()}"
 
     @staticmethod
     def validar_nome(nome):
-        return isinstance(nome,int) and len(nome) == 5
+        return isinstance(nome, str) and len(nome) == 5
+
+    @staticmethod
+    def validar_idade(idade):
+        return isinstance(idade, int) and idade >= 0
             
 # Classe para cadastra o carro recebendo um objeto do tipo Usuário  
 class Car: 
@@ -79,24 +92,7 @@ class Lavagem_cadastrados:
         
     
         
-ca = Cadastrados()
-user = User('maria',23)
-ca.add_user(user)
-
-# carro = Car(user,'verde',123)
-# ca.add_carro(carro)
-
-# user = User('Tues',26)
-# ca.add_user(user)
-
-# carro = Car(user,'verde',124)
-# ca.add_carro(carro)
-
-
-
-
-# print(ca.buscar_user_carro(123))
-# print(100 * '-')
+user = User('martu',23)
 print(user)
 
 
