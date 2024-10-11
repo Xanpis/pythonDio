@@ -2,14 +2,13 @@ car,user = [],[]
 
 
 # Classe para usuário 
-
 class User: 
     try:
         def __init__(self, name, idade) -> None:
             if not self.validar_nome(name):
-                raise ValueError("Nome deve ser uma string e ter exatamente 5 caracteres.")
+                raise ValueError("Nome deve ser uma string e ser maior que 3 caracteres.")
             if not self.validar_idade(idade):
-                raise ValueError("Idade deve ser um número inteiro positivo.")
+                raise ValueError("Idade deve ser um número inteiro positivo. E mair que 18")
             
             self.name = name
             self.idade = idade
@@ -21,16 +20,20 @@ class User:
 
     @staticmethod
     def validar_nome(nome):
-        return isinstance(nome, str) and len(nome) == 5
+        return isinstance(nome, str) and len(nome) >= 3
 
     @staticmethod
     def validar_idade(idade):
-        return isinstance(idade, int) and idade >= 0
+        return isinstance(idade, int) and idade >= 18
             
 # Classe para cadastra o carro recebendo um objeto do tipo Usuário  
 class Car: 
 
     def __init__(self,user:User, cor , placa) -> None:
+        
+        if not self.validar_placa(placa):
+            raise ValueError("A placa dever ter exatamente 5 números positivos")
+        
         self.user = user
         self.cor = cor
         self._placa = placa 
@@ -54,7 +57,8 @@ class Car:
     # Método para validar classe sem precisar instanciar a classe                    
     @staticmethod
     def validar_placa(placa: str) -> bool:
-        return isinstance(placa, str) and len(placa) == 7
+        return isinstance(placa, str) and len(placa) == 4
+    
     
     def buscar_id_placa(self,placa:int):
         placaUser = "".join([f"{chave}" for chave in car if chave.placa == placa])    
@@ -90,10 +94,13 @@ class Lavagem_cadastrados:
             print(100 * '-')
             print(i)
         
+
+try:
+    user = User('mu',23)
+    print(user)
+except ValueError as e :
+    print(e)
     
-        
-user = User('martu',23)
-print(user)
 
 
 
