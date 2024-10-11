@@ -75,7 +75,7 @@ class Trunk(Car):
             
 # métodos de manipulação 
 class Lavar_cadastrados:
-    def __init__(self,placa,tempo) -> None:
+    def __init__(self, placa, tempo) -> None:
         
         if not self.validar_placa(placa):
             raise ValueError("A placa dever ter exatamente 5 números positivos")
