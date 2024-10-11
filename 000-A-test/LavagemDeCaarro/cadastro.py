@@ -81,8 +81,7 @@ class Lavar_cadastrados:
             raise ValueError("A placa dever ter exatamente 5 números positivos")
         
         self.placa = placa
-        self.wash_array = []
-        self.tempo = validar_tempo(tempo)
+        self.tempo = self.validar_tempo(tempo)
         
     @staticmethod
     def validar_placa(placa: str) -> bool:
