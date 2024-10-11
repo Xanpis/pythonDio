@@ -9,8 +9,11 @@ class User:
 
     def __str__(self) -> str:
         return f"Dono do carro = {" | ".join([f"{chave}: {valor}" for chave,valor in self.__dict__.items()]).title()}"
-    
-        
+
+    @staticmethod
+    def validar_nome(nome):
+        return isinstance(nome,int) and len(nome) == 5
+            
 # Classe para cadastra o carro recebendo um objeto do tipo Usuário  
 class Car: 
 
@@ -21,8 +24,7 @@ class Car:
          
     def __str__(self) -> str:
             return f"{self.user} | Cor: {self.cor} | Placa: {self._placa}"
-        
-        
+         
     # encapsulamento
     @property
     def placa(self):
@@ -31,34 +33,43 @@ class Car:
     @placa.setter
     def placa(self, placa:int):
         try:
-            if placa == 1:
+            if isinstance(placa,int()):
                 self._placa   # olhar porque o exception não esta funcionando                      
         except Exception as e:
             print(f'@@@ placa erro {e} @@@ {self.name} ')   
+            
+    # Método para validar classe sem precisar instanciar a classe                    
+    @staticmethod
+    def validar_placa(placa: str) -> bool:
+        return isinstance(placa, str) and len(placa) == 7
     
     def buscar_id_placa(self,placa:int):
         placaUser = "".join([f"{chave}" for chave in car if chave.placa == placa])    
-        return placaUser or False   
-    
-            
-class Trunk(Car):
-    pass
+        return placaUser or False  
+     
        
             
+    
+      
+class Trunk(Car):
+    pass
+
+
+            
 # métodos de manipulação 
-class Cadastrados:
+class Lavagem_cadastrados:
     def __init__(self) -> None:
         pass
     
     def add_user(self,obj:User):
         self.user.append(obj)
-        pass
+
             
     def add_carro(self,obj:Car):
         self.cadastro.append(obj)
     
     def buscar_user_carro(self,placa:int):
-        placaUser = "".join([f"{chave}" for chave in self.cadastro if chave.placa == placa])    
+        placaUser = "".join([f"{chave}" for chave in car if chave.placa == placa])    
         return placaUser or False     
     
     def show_all(self):
@@ -68,9 +79,9 @@ class Cadastrados:
         
     
         
-# ca = Cadastrados()
-# user = User('maria',23)
-# ca.add_user(user)
+ca = Cadastrados()
+user = User('maria',23)
+ca.add_user(user)
 
 # carro = Car(user,'verde',123)
 # ca.add_carro(carro)
