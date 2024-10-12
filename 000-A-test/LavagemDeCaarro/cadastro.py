@@ -88,7 +88,6 @@ class Lavar_cadastrados:
     def validar_placa(placa: str) -> bool:
         return isinstance(placa, str) and len(placa) == 4
     
-    
     # Tempo para os carros ficarem prontos
     @staticmethod
     def validar_tempo(tempo) -> bool:
