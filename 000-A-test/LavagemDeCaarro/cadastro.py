@@ -35,7 +35,7 @@ class Car:
     def __init__(self,user:User, cor , placa) -> None:
         
         if not self.validar_placa(placa):
-            raise ValueError("A placa dever ter exatamente 5 números positivos")
+            raise ValueError("A placa dever ter exatamente 4 números positivos")
         
         self.user = user
         self.cor = cor
@@ -60,8 +60,8 @@ class Car:
             
     # Método para validar classe sem precisar instanciar a classe                    
     @staticmethod
-    def validar_placa(placa: str) -> bool:
-        return isinstance(placa, str) and len(placa) == 4
+    def validar_placa(placa: int) -> bool:
+        return isinstance(placa, int) and len(placa) == 4
     
     
     def buscar_id_placa(self,placa:int):
@@ -79,14 +79,14 @@ class Lavar_cadastrados:
     def __init__(self, placa, tempo) -> None:
         
         if not self.validar_placa(placa):
-            raise ValueError("A placa dever ter exatamente 5 números positivos")
+            raise ValueError("A placa dever ter exatamente 4 números positivos")
         
         self.placa = placa
         self.tempo = self.validar_tempo(tempo)
         
     @staticmethod
-    def validar_placa(placa: str) -> bool:
-        return isinstance(placa, str) and len(placa) == 4
+    def validar_placa(placa: int) -> bool:
+        return isinstance(placa, int) and len(placa) == 4
     
     # Tempo para os carros ficarem prontos
     @staticmethod
