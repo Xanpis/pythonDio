@@ -55,7 +55,8 @@ class Car:
             if isinstance(placa,int()):
                 self._placa   # olhar porque o exception não esta funcionando                      
         except Exception as e:
-            print(f'@@@ placa erro {e} @@@ {self.name} ')   
+            print(f'@@@ placa erro {e} @@@ {self.name} ')
+               
             
     # Método para validar classe sem precisar instanciar a classe                    
     @staticmethod
@@ -87,6 +88,7 @@ class Lavar_cadastrados:
     def validar_placa(placa: str) -> bool:
         return isinstance(placa, str) and len(placa) == 4
     
+    
     # Tempo para os carros ficarem prontos
     @staticmethod
     def validar_tempo(tempo) -> bool:
@@ -94,8 +96,6 @@ class Lavar_cadastrados:
             if i.__class__.__name__== "Car":
                 return  
     
-    
-
 try:
     user = User('mu',23)
     print(user)

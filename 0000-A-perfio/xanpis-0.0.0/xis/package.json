@@ -1,0 +1,63 @@
+{
+  "name": "xis",
+  "version": "0.0.0",
+  "description": "dark thema",
+  "icon": "assets/icon.png",
+  "publisher": "Xanpis",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "displayName": "XANPIS",
+  "license": "MIT",
+  "categories": [
+    "Themes"
+  ],
+
+  "contributes": {
+    "themes": [
+      {
+        "label": "Xanpis",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xanpis.json"
+      },
+      {
+        "label": "Pablo",
+        "uiTheme": "vs-dark",
+        "path": "./themes/pablo.json"
+      },
+      {
+        "label": "Xis One Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xis_one.json"
+      },
+      {
+        "label": "Xis Vampiro",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xis_vampiro.json"
+      },
+      {
+        "label": "Xis Green",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xis_green.json"
+      },
+      {
+        "label": "Xis Mono",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Xis_mono.json"
+      },
+      {
+        "label": "Xis",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xis.json"
+      }
+    ]
+  },
+  
+  "scripts": {
+    "package": "vsce package --no-yarn",
+    "publish": "vsce publish --no-yarn"
+  },
+  "devDependencies": {
+    "vsce": "^2.15.0"
+  }
+}
