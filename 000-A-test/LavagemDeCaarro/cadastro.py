@@ -98,7 +98,7 @@ class Lavar_cadastrados:
 try:
     user = User('mu',23)
     print(user)
-except ValueError as e :
+except ValueError as e:
     print(e)
     
 
