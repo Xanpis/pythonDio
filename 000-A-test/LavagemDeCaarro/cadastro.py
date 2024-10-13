@@ -52,7 +52,7 @@ class Car:
         self._placa = placa 
          
     def __str__(self) -> str:
-            return f"{self.user} | Cor: {self.cor} | Placa: {self._placa}"
+            return f"{self.user} | Veiculo: {self.__class__.__name__} | Cor: {self.cor} | Placa: {self._placa}"
          
     # encapsulamento
     @property
@@ -71,7 +71,7 @@ class Car:
     # Método para validar classe sem precisar instanciar a classe                    
     @staticmethod
     def validar_placa(placa: str) -> bool:
-        # colocando str pora poder saber o tamanho por que com int não funciona
+        # colocando str para poder saber o tamanho por que com int não funciona
         return isinstance(placa, str) and len(placa) == 4
     
     
@@ -88,17 +88,20 @@ class Trunk(Car):
             
 # métodos de manipulação 
 class Lavar_cadastrados:
-    def __init__(self, placa, tempo) -> None:
+    def __init__(self, user, placa, tempo) -> None:
         
-        if not self.validar_placa(placa):
-            raise ValueError("A placa dever ter exatamente 4 números positivos")
-        
+        # if not self.validar_placa(placa):
+        #     raise ValueError("A placa dever ter exatamente 4 números positivos")
+        self.user = user
         self.placa = placa
         self.tempo = self.validar_tempo(tempo)
         
-    @staticmethod
-    def validar_placa(placa: int) -> bool:
-        return isinstance(placa, int) and len(placa) == 4
+    def __str__(self) -> str:
+        return f"{self.user} | Tempo:{self.placa}"
+        
+    # @staticmethod
+    # def validar_placa(placa: str) -> bool:
+    #     return isinstance(placa, str) and len(placa) == 4
     
     # Tempo para os carros ficarem prontos
     @staticmethod
@@ -106,6 +109,7 @@ class Lavar_cadastrados:
         for i in car:
             if i.__class__.__name__== "Car":
                 return  
+    
     
 try:
     use = User('porch',28)
@@ -127,7 +131,8 @@ try:
 except ValueError as e:
     print(e)
     
-
+la = Lavar_cadastrados(tru,'1234',50)
+print(la)
     
 
 
