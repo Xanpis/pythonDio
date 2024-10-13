@@ -1,6 +1,5 @@
 
 
-
 car,user = [],[]
 
 # Classe para usuário 
@@ -10,7 +9,7 @@ class User:
             if not self.validar_nome(name):
                 raise ValueError("Nome deve ser uma string e ser maior que 3 caracteres.")
             if not self.validar_idade(idade):
-                raise ValueError("Idade deve ser um número inteiro positivo. E mair que 18")
+                raise ValueError("Idade deve ser um número inteiro positivo. Mair que (18) e Menor que (70) ")
             
             self.name = name
             self.idade = idade
@@ -18,7 +17,7 @@ class User:
         print('Nome ou idade incorreto')
         
     def __str__(self) -> str:
-        return f"Dono do carro = {' | '.join([f'{chave}: {valor}' for chave, valor in self.__dict__.items()]).title()}"
+        return f"Dono = {' | '.join([f'{chave}: {valor}' for chave, valor in self.__dict__.items()])}"
 
     @staticmethod
     def validar_nome(nome):
@@ -26,8 +25,19 @@ class User:
 
     @staticmethod
     def validar_idade(idade):
-        return isinstance(idade, int) and idade >= 18
+        return isinstance(idade, int) and idade >= 18 and idade <= 70
     
+    def buscando_user(self,nome:str):
+        if not user:
+            return '@@@ Erro Lista de Usuário vazia @@@'
+        else:  
+            for i in user:
+                if i.name == nome:
+                    return ValueError(i) 
+                else:
+                    raise ValueError("@@@ Erro nome não localizado @@@")  
+                      
+
             
 # Classe para cadastra o carro recebendo um objeto do tipo Usuário  
 class Car: 
@@ -60,8 +70,9 @@ class Car:
             
     # Método para validar classe sem precisar instanciar a classe                    
     @staticmethod
-    def validar_placa(placa: int) -> bool:
-        return isinstance(placa, int) and len(placa) == 4
+    def validar_placa(placa: str) -> bool:
+        # colocando str pora poder saber o tamanho por que com int não funciona
+        return isinstance(placa, str) and len(placa) == 4
     
     
     def buscar_id_placa(self,placa:int):
@@ -70,7 +81,8 @@ class Car:
               
       
 class Trunk(Car):
-    pass
+    def __init__(self, user, cor, placa):
+        super().__init__(user, cor, placa)
 
 
             
@@ -96,11 +108,26 @@ class Lavar_cadastrados:
                 return  
     
 try:
-    user = User('mu',23)
-    print(user)
+    use = User('porch',28)
+    print(use)
+    user.append(use)
+except ValueError as e:
+    print(e)
+
+    
+try:
+    print(use.buscando_user("mu"))
+except ValueError as e:
+    print(e)
+
+
+try:
+    tru = Trunk(use,'verde','1234')
+    print(tru)
 except ValueError as e:
     print(e)
     
 
+    
 
 
