@@ -135,10 +135,10 @@ car,user = [],[]
 us = User('guio',34)
 # print(us)
 t = Carro('verde', '1345')
-
+us.adicionar_carro(t)
 
 t = Carro('preto', '2345')
-us.vei.append(t)
+us.adicionar_carro(t)
 
 re = us.buscar_id_placa('1345')
 print(re)
