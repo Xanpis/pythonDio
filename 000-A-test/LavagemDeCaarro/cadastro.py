@@ -44,9 +44,11 @@ class User:
         return isinstance(idade, int) and idade >= 18 and idade <= 70
     
     def buscar_id_placa(self,placa:str):
-        car = [i for i in self.vei if i == placa]
-        return car 
+        car = [i for i in self.vei if i.placa == placa]
+        return car[0] if car else False
 
+    def adicionar_carro(self,obj):
+        self.vei.append(obj)    
     
                       
             
@@ -131,6 +133,18 @@ car,user = [],[]
 #     if op == '0':
 #         break
 
+us = User('guio',34)
+# print(us)
+t = Carro('verde', '1345')
+
+
+t = Carro('preto', '2345')
+us.vei.append(t)
+
+re = us.buscar_id_placa('345')
+print(re)
+
+    
 
 
 
