@@ -63,9 +63,8 @@ class Carro():
         self._placa = placa 
          
     def __str__(self) -> str:
-            return f"| Veiculo: {self.__class__.__name__} | Cor: {self.cor} | Placa: {self._placa}"
-         
-            
+            return f" Veiculo: {self.__class__.__name__} | Cor: {self.cor} | Placa: {self._placa}"
+                  
     # Método para validar classe sem precisar instanciar a classe                    
     @staticmethod
     def validar_placa(placa: str) -> bool:
@@ -141,7 +140,7 @@ t = Carro('verde', '1345')
 t = Carro('preto', '2345')
 us.vei.append(t)
 
-re = us.buscar_id_placa('345')
+re = us.buscar_id_placa('1345')
 print(re)
 
     
