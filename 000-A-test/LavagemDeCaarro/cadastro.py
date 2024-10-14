@@ -1,3 +1,6 @@
+from typing import Self
+
+
 choses = f"""
 [1] Cadastra Usuário
 [2] Lista Usuário
@@ -22,11 +25,17 @@ class User:
         
         self.name = name
         self.idade = idade
-  
-        
+        self.vei = []
+    
+    
     def __str__(self) -> str:
-        return f"User = {' | '.join([f'{chave}: {valor}' for chave, valor in self.__dict__.items()])}"
-
+        if not self.vei:
+            return f"User = Nome: {self.name} | idade: { self.idade}"
+        else:
+            
+            # return f"User = Nome: {self.name} | idade: { self.idade} | {' '.join([f'Veiculo: {i.__class__.__name__} | Cor: {i.cor} | Placa: {i._placa}' for i in self.vei])}"
+            return f"User = Nome: {self.name} | idade: { self.idade} Veículos: {[f' {i.cor}  {i._placa }' for i in self.vei]}"
+                
     @staticmethod
     def validar_nome(nome):
         return isinstance(nome, str) and len(nome) >= 3
@@ -120,12 +129,15 @@ car,user = [],[]
 #         break
 
 us = User('guio',34)
+# print(us)
 t = Car('verde', '1345')
+y = Car('preto', '2345')
+us.vei.append(t)
+us.vei.append(y)
 print(us)
 
 
-
-
+print('oloa\n')
     
 
 
