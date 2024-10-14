@@ -32,9 +32,8 @@ class User:
         if not self.vei:
             return f"User = Nome: {self.name} | idade: { self.idade}"
         else:
-            
             # return f"User = Nome: {self.name} | idade: { self.idade} | {' '.join([f'Veiculo: {i.__class__.__name__} | Cor: {i.cor} | Placa: {i._placa}' for i in self.vei])}"
-            return f"User = Nome: {self.name} | idade: { self.idade} Veículos: {[f' {i.cor}  {i._placa }' for i in self.vei]}"
+            return f"User = Nome: {self.name} | idade: { self.idade} | Veículos: {[f'Veiculo: {i.__class__.__name__}  Placa: {i.placa }  Cor: {i.cor} ' for i in self.vei]}"
                 
     @staticmethod
     def validar_nome(nome):
@@ -44,10 +43,15 @@ class User:
     def validar_idade(idade):
         return isinstance(idade, int) and idade >= 18 and idade <= 70
     
+    def buscar_id_placa(self,placa:str):
+        car = [i for i in self.vei if i == placa]
+        return car 
+
+    
                       
             
 # Classe para cadastra o carro recebendo um objeto do tipo Usuário  
-class Car(): 
+class Carro(): 
     def __init__(self, cor, placa):
         
         if not self.validar_placa(placa):
@@ -66,14 +70,13 @@ class Car():
         # colocando str para poder saber o tamanho por que com int não funciona
         return isinstance(placa, str) and len(placa) == 4
     
+    @property
+    def placa(self):
+        return self._placa 
     
-    def buscar_id_placa(self,placa:int):
-        placaUser = "".join([f"{chave}" for chave in car if chave.placa == placa])    
-        return placaUser or False  
-
               
 # Class caminhão      
-class Trunk(Car):
+class Trunk(Carro):
     def __init__(self, cor, placa):
         super().__init__(cor, placa)
 
@@ -128,17 +131,6 @@ car,user = [],[]
 #     if op == '0':
 #         break
 
-us = User('guio',34)
-# print(us)
-t = Car('verde', '1345')
-y = Car('preto', '2345')
-us.vei.append(t)
-us.vei.append(y)
-print(us)
-
-
-print('oloa\n')
-    
 
 
 
