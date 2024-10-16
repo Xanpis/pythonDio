@@ -84,25 +84,7 @@ class Trunk(Carro):
            
 # métodos de manipulação 
 class Lavar_cadastrados:
-    def __init__(self ) -> None:
-        
-        
-        # if not self.validar_placa(placa):
-        #     raise ValueError("A placa dever ter exatamente 4 números positivos")
-        
-    def __str__(self) -> str:
-        return f"{self.user} | Tempo:{self.placa}"
-        
-    # @staticmethod
-    # def validar_placa(placa: str) -> bool:
-    #     return isinstance(placa, str) and len(placa) == 4
-    
-    # Tempo para os carros ficarem prontos
-    @staticmethod
-    def validar_tempo(tempo) -> bool:
-        for i in car:
-            if i.__class__.__name__== "Car":
-                return  
+    pass
     
     
 car,user = [],[]
@@ -139,10 +121,12 @@ t = Carro('preto', '2345')
 us.adicionar_carro(t)
 
 cop = us.vei.copy()
-re = us.buscar_id_placa('1345')
-print(re)
 
-    
+
+re = us.buscar_id_placa('1345')
+
+yu = cop.append(re)
+print(cop)
 
 
 
