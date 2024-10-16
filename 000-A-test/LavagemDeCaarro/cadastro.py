@@ -4,7 +4,7 @@ from typing import Self
 choses = f"""
 [1] Cadastra Usuário
 [2] Lista Usuário
-[] Trocar O Nome Do Usuário
+[3] Trocar O Nome Do Usuário
 [] Deletar Usuário
 [] Cadastra Carro
 [] Cadastra Caminhão
@@ -43,9 +43,15 @@ class User:
     def validar_idade(idade):
         return isinstance(idade, int) and idade >= 18 and idade <= 70
     
+    @name.setter
+    def name(self,valor):
+        self.name = valor
+        
+    
     def buscar_id_placa(self,placa:str):
         car = [i for i in self.vei if i.placa == placa]
         return car[0] if car else False
+    
 
     def adicionar_carro(self,obj):
         self.vei.append(obj)    
@@ -88,29 +94,33 @@ class Lavar_cadastrados:
     
     
 car,user = [],[]
-# while True:
-#     op = input(f"{choses}> " )
+while True:
+    op = input(f"{choses}> " )
 
-#     if op == '1':
-#         nome = input("Nome: ")
-#         idade =int(input("Idade: "))
-#         try:
-#             use = User(nome,idade)
-#             user.append(use)
-#             print("## Usuário Cadastrado ##")
-#         except ValueError as e:
-#             print(e)
+    if op == '1':
+        nome = input("Nome: ")
+        idade =int(input("Idade: "))
+        try:
+            use = User(nome,idade)
+            user.append(use)
+            print("## Usuário Cadastrado ##")
+        except ValueError as e:
+            print(e)
 
-#     if op == '2':
-#         if not user:
-#             print("@@@ Não tem Usuário cadastrado @@@")
-#         else:
-#             for i in user:
-#                 print(50* "-")
-#                 print(i)
+    if op == '2':
+        if not user:
+            print("@@@ Não tem Usuário cadastrado @@@")
+        else:
+            for i in user:
+                print(50* "-")
+                print(i)
 
-#     if op == '0':
-#         break
+    if op == '3':
+        break
+    
+    
+    if op == '0':
+        break
 
 us = User('guio',34)
 # print(us)
