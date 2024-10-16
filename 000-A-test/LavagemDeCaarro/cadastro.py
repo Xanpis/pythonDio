@@ -120,14 +120,14 @@ us.adicionar_carro(t)
 t = Carro('preto', '2345')
 us.adicionar_carro(t)
 
-cop = us.vei.copy()
+user.append(us)
 
+cop = user.copy()
+p = cop[0]
 
+print(p)
 re = us.buscar_id_placa('1345')
-
-yu = cop.append(re)
-print(cop)
-
+print("Dono: ",us.name,"|", re)
 
 
 
