@@ -1,3 +1,4 @@
+
 array = ['nao','sim','nao','sim','ok','bem']
 une = []
 
@@ -9,7 +10,6 @@ print(une)
 
 lista_com_duplicatas = ["maçã", "banana", "maçã", "laranja", "banana"]
 lista_sem_duplicatas = list(set(lista_com_duplicatas))
-
 print(lista_sem_duplicatas)  # A ordem pode não ser preservada
 
 
