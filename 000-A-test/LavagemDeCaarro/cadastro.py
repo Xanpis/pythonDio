@@ -84,13 +84,11 @@ class Trunk(Carro):
            
 # métodos de manipulação 
 class Lavar_cadastrados:
-    def __init__(self, user, placa, tempo) -> None:
+    def __init__(self ) -> None:
+        
         
         # if not self.validar_placa(placa):
         #     raise ValueError("A placa dever ter exatamente 4 números positivos")
-        self.user = user
-        self.placa = placa
-        self.tempo = self.validar_tempo(tempo)
         
     def __str__(self) -> str:
         return f"{self.user} | Tempo:{self.placa}"
@@ -140,6 +138,7 @@ us.adicionar_carro(t)
 t = Carro('preto', '2345')
 us.adicionar_carro(t)
 
+cop = us.vei.copy()
 re = us.buscar_id_placa('1345')
 print(re)
 
