@@ -16,6 +16,7 @@ class Categoria:
             return True
         return False
     
+    
     # TODOS: Implementar o método total_vendas para calcular e retornar o total das vendas
     def total_de_vendas(self):
         total = 0
