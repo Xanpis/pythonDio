@@ -18,6 +18,7 @@ for i in range(len(vet), 0, -1):
 
 print('D: ',d)
 
+
 e = []
 for i in reversed(vet):
     e.append(i)
