@@ -1,4 +1,3 @@
-from typing import Self
 
 
 choses = f"""
@@ -89,6 +88,14 @@ class Lavar_cadastrados:
     def __init__(self, array):
         self.array = array
         
+    def add_lavagem(self,placa):
+        for i in self.array:
+                for j in i.vei:
+                    if j.placa == placa:
+                        car.append(f"Dono: {i.name} | {j}")
+                    else:
+                        raise ValueError("@@ Veiculo Não Encontrado @@")
+            
        
     
 car,user = [],[]
@@ -121,6 +128,7 @@ car,user = [],[]
         # break
 
 us = User('guio',34)
+yu = User("maria", 23)
 # print(us)
 t = Carro('verde', '1345')
 us.adicionar_carro(t)
@@ -130,14 +138,13 @@ us.adicionar_carro(t)
 
 user.append(us)
 
-cop = user.copy()
-p = cop[0]
 
-print(p)
-re = us.buscar_id_placa('1345')
-print("Dono: ",us.name,"|", re)
-
-
+try:
+    lava = Lavar_cadastrados(user)
+    lava.add_lavagem('145')
+    print(car)
+except ValueError as e:
+    print(e)
 
 
     
