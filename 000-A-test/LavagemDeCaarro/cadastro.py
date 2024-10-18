@@ -86,8 +86,10 @@ class Trunk(Carro):
            
 # métodos de manipulação 
 class Lavar_cadastrados:
-    pass
-    
+    def __init__(self, array):
+        self.array = array
+        
+       
     
 car,user = [],[]
 # while True:
