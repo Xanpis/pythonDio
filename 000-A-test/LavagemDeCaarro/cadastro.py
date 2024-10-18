@@ -41,12 +41,9 @@ class User:
     def validar_idade(idade):
         return isinstance(idade, int) and idade >= 18 and idade <= 70
     
-
-    
     def buscar_id_placa(self,placa:str):
         car = [i for i in self.vei if i.placa == placa]
         return car[0] if car else False
-    
 
     def adicionar_carro(self,obj):
         self.vei.append(obj)    
@@ -139,12 +136,12 @@ us.adicionar_carro(t)
 user.append(us)
 
 
-try:
-    lava = Lavar_cadastrados(user)
-    lava.add_lavagem('145')
-    print(car)
-except ValueError as e:
-    print(e)
+# try:
+#     lava = Lavar_cadastrados(user)
+#     lava.add_lavagem('145')
+#     print(car)
+# except ValueError as e:
+#     print(e)
 
 
     
