@@ -124,16 +124,16 @@ car,user = [],[]
 #     if op == '0':
         # break
 
-us = User('guio',34)
-yu = User("maria", 23)
-# print(us)
-t = Carro('verde', '1345')
-us.adicionar_carro(t)
+# us = User('guio',34)
+# yu = User("maria", 23)
+# # print(us)
+# t = Carro('verde', '1345')
+# us.adicionar_carro(t)
 
-t = Carro('preto', '2345')
-us.adicionar_carro(t)
+# t = Carro('preto', '2345')
+# us.adicionar_carro(t)
 
-user.append(us)
+# user.append(us)
 
 
 # try:
