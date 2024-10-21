@@ -1,11 +1,11 @@
-from datetime import  date, datetime
-carro_tempo = 30
+from datetime import  date, datetime, timedelta
+carro_tempo = 1800
 truck_tempo = 60
 hora_data = datetime.now()
 
-data_estimada = 89
+data_estimada = hora_data + timedelta(0,0,0,0,truck_tempo,)
 
-print(hora_data)
+print(data_estimada)
 
 choses = f"""
 [1] Cadastra Usuário
