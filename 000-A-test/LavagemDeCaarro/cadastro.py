@@ -1,4 +1,11 @@
+from datetime import  date, datetime
+carro_tempo = 30
+truck_tempo = 60
+hora_data = datetime.now()
 
+data_estimada = 89
+
+print(hora_data)
 
 choses = f"""
 [1] Cadastra Usuário

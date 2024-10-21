@@ -7,8 +7,6 @@ print(date.today())
 print(30 * '=')
 
 # Retorna um obj  data, hora, segundos, e minutos
-data_hora = datetime(2023, 7, 10,)
-print(data_hora)
 print(datetime.today())
 print(30 * '=')
 
