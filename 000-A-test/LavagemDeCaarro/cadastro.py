@@ -1,11 +1,8 @@
 from datetime import  date, datetime, timedelta
-carro_tempo = 1800
+carro_tempo = 30
 truck_tempo = 60
 hora_data = datetime.now()
 
-data_estimada = hora_data + timedelta(0,0,0,0,truck_tempo,)
-
-print(data_estimada)
 
 choses = f"""
 [1] Cadastra Usuário
@@ -95,10 +92,10 @@ class Lavar_cadastrados:
     def add_lavagem(self,placa):
         for i in self.array:
                 for j in i.vei:
-                    if j.placa == placa:
-                        car.append(f"Dono: {i.name} | {j}")
-                    else:
-                        raise ValueError("@@ Veiculo Não Encontrado @@")
+                    if placa == j.placa:
+                        car.append(f"Dono: {i.name} | {j} Chegada: {hora_data}  Saida: {hora_data +timedelta(0,0,0,0,carro_tempo)}")
+                    
+                        
             
        
     
@@ -131,24 +128,25 @@ car,user = [],[]
 #     if op == '0':
         # break
 
-# us = User('guio',34)
-# yu = User("maria", 23)
-# # print(us)
-# t = Carro('verde', '1345')
-# us.adicionar_carro(t)
+us = User('guio',34)
+yu = User("maria", 23)
+# print(us)
+t = Carro('verde', '1345')
+us.adicionar_carro(t)
 
-# t = Carro('preto', '2345')
-# us.adicionar_carro(t)
+t = Carro('preto', '2345')
+us.adicionar_carro(t)
 
-# user.append(us)
+user.append(us)
 
+print(user[0])
 
-# try:
-#     lava = Lavar_cadastrados(user)
-#     lava.add_lavagem('145')
-#     print(car)
-# except ValueError as e:
-#     print(e)
+try:
+    lava = Lavar_cadastrados(user)
+    lava.add_lavagem('1345')
+    print(car)
+except ValueError as e:
+    print(e)
 
 
     
