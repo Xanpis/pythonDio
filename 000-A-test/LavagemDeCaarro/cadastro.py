@@ -91,10 +91,13 @@ class Lavar_cadastrados:
         
     def add_lavagem(self,placa):
         for i in self.array:
-                for j in i.vei:
-                    if placa == j.placa:
+            for j in i.vei:
+                if placa == j.placa:
+                    if j.__class__.__name__ == 'Carro':
                         car.append(f"Dono: {i.name} | {j} Chegada: {hora_data}  Saida: {hora_data +timedelta(0,0,0,0,carro_tempo)}")
-                    
+                    if j.__class__.__name__ == 'Trunk':
+                        car.append(f"Dono: {i.name} | {j} Chegada: {hora_data}  Saida: {hora_data +timedelta(0,0,0,0,truck_tempo)}")
+                
                         
             
        
