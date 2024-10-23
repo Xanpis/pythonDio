@@ -103,33 +103,33 @@ class Lavar_cadastrados:
        
     
 car,user = [],[]
-# while True:
-#     op = input(f"{choses}> " )
+while True:
+    op = input(f"{choses}> " )
 
-#     if op == '1':
-#         nome = input("Nome: ")
-#         idade =int(input("Idade: "))
-#         try:
-#             use = User(nome,idade)
-#             user.append(use)
-#             print("## Usuário Cadastrado ##")
-#         except ValueError as e:
-#             print(e)
+    if op == '1':
+        nome = input("Nome: ")
+        idade =int(input("Idade: "))
+        try:
+            use = User(nome,idade)
+            user.append(use)
+            print("## Usuário Cadastrado ##")
+        except ValueError as e:
+            print(e)
 
-#     if op == '2':
-#         if not user:
-#             print("@@@ Não tem Usuário cadastrado @@@")
-#         else:
-#             for i in user:
-#                 print(50* "-")
-#                 print(i)
+    if op == '2':
+        if not user:
+            print("@@@ Não tem Usuário cadastrado @@@")
+        else:
+            for i in user:
+                print(50* "-")
+                print(i)
 
-#     if op == '3':
-#         break
+    if op == '3':
+        break
     
     
-#     if op == '0':
-        # break
+    if op == '0':
+        break
 
 us = User('guio',34)
 yu = User("maria", 23)
