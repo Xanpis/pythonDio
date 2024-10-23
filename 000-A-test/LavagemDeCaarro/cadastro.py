@@ -108,8 +108,8 @@ while True:
 
     if op == '1':
         nome = input("Nome: ")
-        idade =int(input("Idade: "))
         try:
+            idade =int(input("Idade: "))
             use = User(nome,idade)
             user.append(use)
             print("## Usuário Cadastrado ##")
@@ -131,25 +131,25 @@ while True:
     if op == '0':
         break
 
-us = User('guio',34)
-yu = User("maria", 23)
-# print(us)
-t = Carro('verde', '1345')
-us.adicionar_carro(t)
+# us = User('guio',34)
+# yu = User("maria", 23)
+# # print(us)
+# t = Carro('verde', '1345')
+# us.adicionar_carro(t)
 
-t = Carro('preto', '2345')
-us.adicionar_carro(t)
+# t = Carro('preto', '2345')
+# us.adicionar_carro(t)
 
-user.append(us)
+# user.append(us)
 
-print(user[0])
+# print(user[0])
 
-try:
-    lava = Lavar_cadastrados(user)
-    lava.add_lavagem('1345')
-    print(car)
-except ValueError as e:
-    print(e)
+# try:
+#     lava = Lavar_cadastrados(user)
+#     lava.add_lavagem('1345')
+#     print(car)
+# except ValueError as e:
+#     print(e)
 
 
     
