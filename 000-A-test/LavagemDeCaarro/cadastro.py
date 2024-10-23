@@ -7,8 +7,8 @@ hora_data = datetime.now()
 choses = f"""
 [1] Cadastra Usuário
 [2] Lista Usuário
-[] Deletar Usuário
-[] Cadastra Carro
+[3] Deletar Usuário
+[4] Cadastra Carro
 [] Cadastra Caminhão
 [] Buscar Veiculo
 [] Deletar veiculo
@@ -59,7 +59,7 @@ class Carro():
     def __init__(self, cor, placa):
         
         if not self.validar_placa(placa):
-            raise ValueError("A placa dever ter exatamente 4 números positivos")
+            raise ValueError("A placa dever ter exatamente 7 Carácter números e letra")
         
         self.cor = cor
         self._placa = placa 
@@ -71,7 +71,7 @@ class Carro():
     @staticmethod
     def validar_placa(placa: str) -> bool:
         # colocando str para poder saber o tamanho por que com int não funciona
-        return isinstance(placa, str) and len(placa) == 4
+        return isinstance(placa, str) and len(placa) == 7
     
     @property
     def placa(self):
@@ -102,7 +102,23 @@ class Lavar_cadastrados:
             
        
     
-car,user = [],[]
+array_car,array_user = [],[]
+
+def mostra_user():
+    if not array_user:
+        print("@@@ Não tem Usuário cadastrado @@@")
+        return False
+    else:
+        for i in array_user:
+            print(50* "-")
+            print(i)
+            
+def buscar_user(nome):
+    for i in array_user:
+        if i.name == nome:
+            print(i)
+            return i 
+    
 while True:
     op = input(f"{choses}> " )
 
@@ -110,20 +126,38 @@ while True:
         nome = input("Nome: ")
         try:
             idade =int(input("Idade: "))
-            use = User(nome,idade)
-            user.append(use)
+            user = User(nome,idade)
+            array_user.append(user)
             print("## Usuário Cadastrado ##")
         except ValueError as e:
             print(e)
 
     if op == '2':
-        if not user:
-            print("@@@ Não tem Usuário cadastrado @@@")
-        else:
-            for i in user:
-                print(50* "-")
-                print(i)
+        mostra_user()
 
+    if op == '3':
+        break
+    
+    if op == '4':
+            
+        try:
+            e = mostra_user()
+            if not e :
+                print('dentro')
+            else:    
+                nome = input("Informe o Nome do Usuário: ")
+                i = buscar_user(nome)
+                if not i :
+                    print("@@ Usuário não encontrado") 
+                else:
+                    cor = input("Informe a cor: ")
+                    placa = input("Informe a Placa: ")
+                    carro = Carro(cor,placa)
+                    i.adicionar_carro(carro)
+        except ValueError as e:
+            print(e)
+
+    
     if op == '3':
         break
     
