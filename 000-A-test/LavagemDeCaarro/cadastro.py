@@ -59,7 +59,7 @@ class Carro():
     def __init__(self, cor, placa):
         
         if not self.validar_placa(placa):
-            raise ValueError("A placa dever ter exatamente 7 Carácter números e letra")
+            raise ValueError("A placa dever ter maior ou igual 4 Carácter números e letra")
         
         self.cor = cor
         self._placa = placa 
@@ -71,7 +71,7 @@ class Carro():
     @staticmethod
     def validar_placa(placa: str) -> bool:
         # colocando str para poder saber o tamanho por que com int não funciona
-        return isinstance(placa, str) and len(placa) == 7
+        return isinstance(placa, str) and len(placa) >= 4
     
     @property
     def placa(self):
@@ -112,7 +112,7 @@ def mostra_user():
         for i in array_user:
             print(50* "-")
             print(i)
-            
+    return True        
 def buscar_user(nome):
     for i in array_user:
         if i.name == nome:
@@ -136,6 +136,7 @@ while True:
         mostra_user()
 
     if op == '3':
+        
         break
     
     if op == '4':
@@ -143,22 +144,24 @@ while True:
         try:
             e = mostra_user()
             if not e :
-                print('dentro')
-            else:    
-                nome = input("Informe o Nome do Usuário: ")
+                pass
+            else:   
+                print() 
+                nome = input("Informe o Nome do Usuário para Adicionar o carro: ")
                 i = buscar_user(nome)
                 if not i :
                     print("@@ Usuário não encontrado") 
                 else:
-                    cor = input("Informe a cor: ")
-                    placa = input("Informe a Placa: ")
+                    cor = input("Informe a Cor do Carro: ")
+                    placa = input("Informe a Placa Com 4 Numero ou Letra: ")
                     carro = Carro(cor,placa)
                     i.adicionar_carro(carro)
+                    print("## Carro cadastrado ##")
         except ValueError as e:
             print(e)
 
     
-    if op == '3':
+    if op == '5':
         break
     
     
