@@ -118,6 +118,11 @@ def buscar_user(nome):
         if i.name == nome:
             print(i)
             return i 
+
+def deletar_user(nome):
+    for i in array_user:
+        if i.name == nome:
+            print(i)
     
 while True:
     op = input(f"{choses}> " )
@@ -136,8 +141,12 @@ while True:
         mostra_user()
 
     if op == '3':
-        
-        break
+        try:
+          nome = input("Informe o Nome do Usuário para ser Removido: ")
+          deletar_user(nome)
+        except:
+            pass
+
     
     if op == '4':
             
