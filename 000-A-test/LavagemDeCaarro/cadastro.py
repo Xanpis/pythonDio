@@ -120,9 +120,13 @@ def buscar_user(nome):
             return i 
 
 def deletar_user(nome):
+    j = 0
     for i in array_user:
+        j+=1
         if i.name == nome:
-            print(i)
+            array_user.pop(j-1)
+            print("Removido")
+
     
 while True:
     op = input(f"{choses}> " )
