@@ -77,13 +77,15 @@ class Carro():
     def placa(self):
         return self._placa 
     
+    
               
 # Class caminhão      
 class Trunk(Carro):
     def __init__(self, cor, placa):
         super().__init__(cor, placa)
 
-           
+
+         
 # métodos de manipulação 
 class Lavar_cadastrados:
     def __init__(self, array):
@@ -99,8 +101,7 @@ class Lavar_cadastrados:
                         car.append(f"Dono: {i.name} | {j} Chegada: {hora_data}  Saida: {hora_data +timedelta(0,0,0,0,truck_tempo)}")
                 
                         
-            
-       
+                              
     
 array_car,array_user = [],[]
 
