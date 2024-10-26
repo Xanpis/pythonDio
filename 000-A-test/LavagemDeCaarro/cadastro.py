@@ -190,7 +190,7 @@ while True:
                 else:
                     cor = input("Informe a Cor do Caminhão: ")
                     placa = input("Informe a Placa Com 4 Numero e Letra: ")
-                    trunk = Trunk()(cor,placa)
+                    trunk = Trunk(cor,placa)
                     i.adicionar_carro(trunk)
                     print("## Caminhão cadastrado ##")
         except ValueError as e:
