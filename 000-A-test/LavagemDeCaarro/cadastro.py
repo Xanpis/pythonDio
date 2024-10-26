@@ -9,7 +9,7 @@ choses = f"""
 [2] Lista Usuário
 [3] Deletar Usuário
 [4] Cadastra Carro
-[] Cadastra Caminhão
+[5] Cadastra Caminhão
 [] Buscar Veiculo
 [] Deletar veiculo
 [] Lavar Veiculo
@@ -176,6 +176,27 @@ while True:
 
     
     if op == '5':
+            
+        try:
+            e = mostra_user()
+            if not e :
+                pass
+            else:   
+                print() 
+                nome = input("Informe o Nome do Usuário para Adicionar o Caminhão: ")
+                i = buscar_user(nome)
+                if not i :
+                    print("@@ Usuário não encontrado") 
+                else:
+                    cor = input("Informe a Cor do Caminhão: ")
+                    placa = input("Informe a Placa Com 4 Numero e Letra: ")
+                    trunk = Trunk()(cor,placa)
+                    i.adicionar_carro(trunk)
+                    print("## Caminhão cadastrado ##")
+        except ValueError as e:
+            print(e)
+        
+        
         break
     
     
