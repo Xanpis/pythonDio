@@ -1,3 +1,4 @@
+
 texto = input('Digite o testo = ')
 VOGAL = 'AEIOU'
 
