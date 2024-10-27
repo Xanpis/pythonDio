@@ -196,9 +196,6 @@ while True:
         except ValueError as e:
             print(e)
         
-        
-        break
-    
     
     if op == '0':
         break
