@@ -19,7 +19,7 @@ produto_1 = 10
 produto_2 = 20
 
 print(produto_1 +produto_2)
-# Retorna um valor negativo por que o 1 é menor que o 2
+# Retorna um valor negativo por que o 1 é menor do que o 2
 print(produto_1 - produto_2)
 print(produto_1 / produto_2)
 print(produto_1 // produto_2)
