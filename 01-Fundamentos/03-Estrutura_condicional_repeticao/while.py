@@ -7,7 +7,6 @@ while True:
     # Parando o laço
     if opcao == "10":
         break
-    
     print(opcao)
     
 for numero in range(51):

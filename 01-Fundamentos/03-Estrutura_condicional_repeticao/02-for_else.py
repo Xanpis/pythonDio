@@ -1,6 +1,6 @@
 
 texto = input('Digite o testo = ')
-VOGAL = 'AEIOU'
+VOGAL = 'A-E-I-O-U'
 
 
 for i in texto:
