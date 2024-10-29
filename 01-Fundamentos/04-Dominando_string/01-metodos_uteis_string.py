@@ -27,6 +27,7 @@ print("..."  +  nome.rstrip() + '....')
 nome = "python"
 # centralização
 print(nome.center(10,"#"))
+
 # junção
 print(".".join(nome))
  
