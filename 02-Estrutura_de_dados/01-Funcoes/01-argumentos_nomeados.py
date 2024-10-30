@@ -7,7 +7,9 @@ def salvar_carro(marca, modelo, ano, placa):
 
 # Argumentos posicionais
 salvar_carro("Fiat", "Palio", 1999, "ABC-1234")
+
 # Argumentos nomeados 
 salvar_carro(marca="Fiat", modelo="Palio", ano=1999, placa="ABC-1234")
-# passando um dicionario para a funcao
+
+# passando um dicionario para a função
 salvar_carro(**{"marca": "Fiat", "modelo": "Palio", "ano": 1999, "placa": "ABC-1234"})
