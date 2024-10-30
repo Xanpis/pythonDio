@@ -1,6 +1,6 @@
 nome = "Guilherme"
 idade = 28
-profissao = "Progamador"
+profissao = "Programador"
 linguagem = "Python"
 saldo = 45.435
 
