@@ -14,8 +14,7 @@ class Pessoa:
         return f"""
                 nome: {self.nome}
                 idade: {self.idade}
-            """
-    
+            """    
 
 def add():
     nome = input('Nome: ')
