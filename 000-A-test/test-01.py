@@ -21,6 +21,7 @@ def add():
     idade = input('idade: ')
     conta = Pessoa(nome, idade)
     array.append(conta)
+    
         
 array = []
 add()
