@@ -26,6 +26,8 @@ def obter_entrada_produtos():
     produtos = [s.strip() for s in lista_de_strings if s.strip()]
     return produtos
 
+
+
 produtos = obter_entrada_produtos()
 cont, maxi = produto_mais_vendido(produtos)
 print(f"""      
