@@ -17,6 +17,7 @@ def produto_mais_vendido(produtos):
     
     return contagem, max_produto
 
+
 def obter_entrada_produtos():
   
     entrada = input()
