@@ -19,5 +19,6 @@ def obter_entrada_vendas():
     
     return vendas
 
+
 vendas = obter_entrada_vendas()
 print(analise_vendas(vendas))
