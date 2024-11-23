@@ -17,6 +17,7 @@ def salario_bonus(bonus, lista_test:list):
     
 lista = [1]
 
+
 print(salario_bonus(200, lista))
 
 # funciona para lista porque lista é imutavel, tudo de operacao eu altero por referencia. 
