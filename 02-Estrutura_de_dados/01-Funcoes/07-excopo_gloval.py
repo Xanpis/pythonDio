@@ -30,7 +30,6 @@ def salario_bonus2 (bonus,lis:list):
     lista_aux = lis.copy()
     lista_aux.append(5)
     print(f"lista_aux:{lista_aux}")
-    
     salario += bonus
     return salario
 
