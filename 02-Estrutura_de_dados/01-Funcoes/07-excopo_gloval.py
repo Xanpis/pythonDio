@@ -33,5 +33,6 @@ def salario_bonus2 (bonus,lis:list):
     salario += bonus
     return salario
 
+
 salario_bonus2(900, lista)
 
