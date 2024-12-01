@@ -12,7 +12,6 @@ def exibir_resultado(a, b, fun ):
 
 # Tenho que passar a funcao sem colchetes 
 exibir_resultado(10,10 , somar)
-
 exibir_resultado(10,10 , diminuir)
 
 op = somar
